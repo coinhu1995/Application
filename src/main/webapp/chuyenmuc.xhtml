@@ -6,21 +6,16 @@
 
 <ui:define name="metadata">
 	<f:metadata>
-		<f:viewAction action="#{home.init()}" />
+		<f:viewAction action="#{category.init()}" />
 	</f:metadata>
 </ui:define>
 
 <h:head>
 	<title>Chính sách xã hội</title>
-	<ui:include src="common/top.xhtml" />
 	<ui:include src="common/header.xhtml" />
 </h:head>
 
 <h:body>
-	<div class="main-body-p">
-		<div class="main-content-p">
-			sadasd
-		</div>	
-	</div>
+	<h3>#{category.item}</h3>
 </h:body>
 </html>
