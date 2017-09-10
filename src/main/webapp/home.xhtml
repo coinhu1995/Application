@@ -1,98 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:c="http://xmlns.jcp.org/jsf/composite/custom"
-	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
-	xmlns:jhope="http://www.jfe-steel.co.jp/jax01-fw-jsf"
-	template="common/_layout.xhtml">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
-	<ui:param name="pageTitle" value="初期メニュー" />
+<h:head>
+	<title>Chính sách xã hội</title>
+	<ui:include src="common/header.xhtml" />
+</h:head>
 
-	<ui:define name="screen-id">
-		<jhope:span styleClass="left_white_space">CHUAAW0020</jhope:span>
-	</ui:define>
-
-	<ui:define name="screen-title">
-		<jhope:span>初期メニュー</jhope:span>
-	</ui:define>
-
-	<ui:define name="breadcrumb">
-		<jhope:div id="top_area" styleClass="row">
-			<jhope:breadcrumbs>
-				<jhope:crumb value="初期メニュー" active="true">
-					<jhope:div styleClass="menu">
-						<jhope:div styleClass="table-line1">
-							<jhope:span styleClass="popover-item-position col-sm-2">
-								<jhope:link value="初期メニュー" outcome="CHUAAW0020" />
-							</jhope:span>
-							<jhope:span styleClass="popover-item-position col-sm-2">マスタ管理</jhope:span>
-
-							<jhope:span
-								styleClass="fa fa-desktop popover-item-position col-sm-3">
-								<jhope:link value="管理情報検索" outcome="CHUBAW0010" />
-							</jhope:span>
-							<jhope:span
-								styleClass="fa fa-desktop popover-item-position col-sm-2">
-								<jhope:link value="承認" outcome="CHUBDW0010" />
-							</jhope:span>
-							<jhope:span styleClass="fa fa-desktop popover-item-position">
-								<jhope:link value="本番登録" outcome="CHUBEW0010" />
-							</jhope:span>
-							<jhope:span
-								styleClass="fa fa-desktop popover-item-position col-sm-offset-4">
-								<jhope:link value="本番登録状況確認" outcome="CHUBFW0010" />
-							</jhope:span>
-							<jhope:div styleClass="table-line4 col-sm-offset-2">
-							</jhope:div>
-
-							<jhope:span
-								styleClass="popover-item-position col-sm-2 col-sm-offset-2">検索</jhope:span>
-							<jhope:span
-								styleClass="fa fa-desktop popover-item-position col-sm-3">
-								<jhope:link value="案件検索" outcome="CHUCAW0010" />
-							</jhope:span>
-							<jhope:span
-								styleClass="fa fa-desktop popover-item-position col-sm-2">
-								<jhope:link value="マスタ検索" outcome="CHUBCW0010" />
-							</jhope:span>
-							<jhope:span styleClass="fa fa-desktop popover-item-position ">
-								<jhope:link value="項目データ検索" outcome="CHUDBW0010" />
-							</jhope:span>
-							<jhope:span
-								styleClass="fa fa-desktop popover-item-position col-sm-offset-4 col-sm-3">
-								<jhope:link value="項目影響範囲検索" outcome="CHUDDW0010" />
-							</jhope:span>
-							<jhope:span
-								styleClass="fa fa-desktop popover-item-position col-sm-2">
-								<jhope:link value="項目名一覧" outcome="SCREEN01" />
-							</jhope:span>
-							<jhope:span styleClass="fa fa-desktop popover-item-position">
-								<jhope:link value=" 項目作成基準台帳一覧" outcome="SCREEN04" />
-							</jhope:span>
-
-							<jhope:div styleClass="table-line4 col-sm-offset-2">
-							</jhope:div>
-
-							<jhope:span
-								styleClass="popover-item-position col-sm-offset-2 col-sm-2">管理者機能</jhope:span>
-							<jhope:span
-								styleClass="fa fa-desktop popover-item-position col-sm-3">
-								<jhope:link value="マスタコピー" outcome="CHUEBW0010" />
-							</jhope:span>
-							<jhope:span styleClass="fa fa-desktop popover-item-position">
-								<jhope:link value="マスタ取込" outcome="CHUECW0010" />
-							</jhope:span>
-							<jhope:div styleClass="table-line1 popover-footer-height"></jhope:div>
-						</jhope:div>
-					</jhope:div>
-				</jhope:crumb>
-			</jhope:breadcrumbs>
-		</jhope:div>
-	</ui:define>
-
-	<ui:define name="content">
-		<h:outputLabel>asdasjd</h:outputLabel>
-	</ui:define>
-</ui:composition>
+<h:body>
+	<h3>JSF 2.0 Hello World Example - hello.xhtml</h3>
+	<h:form>
+		<h:inputText value="#{helloBean.name}"></h:inputText>
+		<h:commandButton value="Welcome Me" action="welcome"></h:commandButton>
+	</h:form>
+</h:body>
+</html>

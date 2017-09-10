@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Chính sách</title>
+	<h:outputStylesheet library="css"
+		name="A.demo_style.css,qver=8.0_d55.pagespeed.cf.dLuD3M0aFv.css" />
+	<h:outputStylesheet library="css"
+		name="A.style.css,qver=8.0_d55.pagespeed.cf.EoFlJlOqAc.css" />
+	<h:outputStylesheet library="css"
+		name="A.td_live_css_frontend.css,qver=4.7.5.pagespeed.cf.hgsjq34X9o.css" />
+	<h:outputStylesheet library="css" name="google_fonts_style_css.css" />
+	<h:outputStylesheet library="css" name="Policy.css" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</link>
+</h:head>
+
+<h:body>
+	<div id="td-outer-wrap" class="td-theme-wrap">
+		<div class="td-header-wrap td-header-style-1">
+			<div class="td-header-top-menu-full td-container-wrap ">
+				<div class="td-container td-header-row td-header-top-menu">
+					<div class="top-bar-style-1">
+						<div class="td-header-sp-top-menu">
+							<div class="td_data_time">
+								<div>#{headerUi.getCurrentDate()}</div>
+							</div>
+							<ul class="top-header-menu td_ul_login sf-js-enabled">
+								<li class="menu-item"><a
+									class="td-login-modal-js menu-item" href="#login-form"
+									data-effect="mpf-td-login-effect">Sign in / Join</a><span
+									class="td-sp-ico-login td_sp_login_ico_style"></span></li>
+							</ul>
+							<div class="menu-top-container">
+								<ul id="menu-td-demo-top-menu"
+									class="top-header-menu sf-js-enabled">
+									<li id="menu-item-167"
+										class="menu-item menu-item-type-custom menu-item-object-custom td-menu-item td-normal-menu menu-item-167"><a
+										href="#">About me</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="td-header-sp-top-widget">
+							<span class="td-social-icon-wrap"> <a target="_blank"
+								href="https://facebook.com/uhnnh" title="Facebook"> <i
+									class="fa fa-facebook"></i>
+							</a>
+							</span> <span class="td-social-icon-wrap"> <a target="_blank"
+								href="https://plus.google.com/u/0/107054629679946592649"
+								title="Google+"> <i class="fa fa-google"></i>
+							</a>
+							</span> <span class="td-social-icon-wrap"> <a target="_blank"
+								href="https://www.instagram.com/uhnnh/" title="Instagram"> <i
+									class="fa fa-instagram"></i>
+							</a>
+							</span>
+						</div>
+					</div>
+					<div id="login-form"
+						class="white-popup-block mfp-hide mfp-with-anim">
+						<div class="td-login-wrap">
+							<a href="#" class="td-back-button"><i
+								class="td-icon-modal-back"></i></a>
+							<div id="td-login-div" class="td-login-form-div td-display-block">
+								<div class="td-login-panel-title">Sign in</div>
+								<div class="td-login-panel-descr">Welcome! Log into your
+									account</div>
+								<div class="td_display_err"></div>
+								<div class="td-login-inputs">
+									<input class="td-login-input" type="text" name="login_email"
+										id="login_email" value="" /><label>your username</label>
+								</div>
+								<div class="td-login-inputs">
+									<input class="td-login-input" type="password" name="login_pass"
+										id="login_pass" value="" /><label>your password</label>
+								</div>
+								<input type="button" name="login_button" id="login_button"
+									class="wpb_button btn td-login-button" value="Login" />
+								<div class="td-login-info-text">
+									<a href="#" id="forgot-pass-link">Forgot your password? Get
+										help</a>
+								</div>
+							</div>
+							<div id="td-forgot-pass-div"
+								class="td-login-form-div td-display-none">
+								<div class="td-login-panel-title">Password recovery</div>
+								<div class="td-login-panel-descr">Recover your password</div>
+								<div class="td_display_err"></div>
+								<div class="td-login-inputs">
+									<input class="td-login-input" type="text" name="forgot_email"
+										id="forgot_email" value="" /><label>your email</label>
+								</div>
+								<input type="button" name="forgot_button" id="forgot_button"
+									class="wpb_button btn td-login-button" value="Send My Password" />
+								<div class="td-login-info-text">A password will be
+									e-mailed to you.</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-background"></div>
+			<div class="td-header-menu-wrap-full td-container-wrap "
+				style="height: 47.5px;">
+				<div class="td-header-menu-wrap td-header-gradient">
+					<div class="td-container td-header-row td-header-main-menu">
+						<div id="td-header-menu" role="navigation">
+							<div id="td-top-mobile-toggle">
+								<a href="#"><i class="td-icon-font td-icon-mobile"></i></a>
+							</div>
+							<div class="menu-td-demo-header-menu-container">
+								<ul id="menu-td-demo-header-menu-1"
+									class="sf-menu sf-js-enabled">
+									<li
+										class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-163 current_page_item menu-item-first td-menu-item td-normal-menu menu-item-165"><a
+										href="home.xhtml">Home</a></li>
+									<li
+										class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-mega-menu menu-item-157"><a
+										href="https://demo.tagdiv.com/newspaper_lifestyle/category/lifestyle/"
+										class="sf-with-ul">Lifestyle <i class="fa fa-angle-down"></i></a>
+										<ul class="sub-menu"
+											style="display: none; float: none; width: 20em;">
+											<li class="menu-item-0"
+												style="white-space: normal; float: left; width: 100%;"><div
+													class="td-container-border">
+													<div class="td-mega-grid">
+														<div
+															class="td_block_wrap td_block_mega_menu td_uid_2_59b3dfe8b6a26_rand td_with_ajax_pagination td-pb-border-top td_block_template_8"
+															data-td-block-uid="td_uid_2_59b3dfe8b6a26">
+
+															<div class="td_mega_menu_sub_cats">
+																<div class="block-mega-child-cats">
+																	<a
+																		class="cur-sub-cat mega-menu-sub-cat-td_uid_2_59b3dfe8b6a26"
+																		id="td_uid_3_59b3dfe8b6f39"
+																		data-td_block_id="td_uid_2_59b3dfe8b6a26"
+																		data-td_filter_value=""
+																		href="https://demo.tagdiv.com/newspaper_lifestyle/category/lifestyle/">All</a><a
+																		class="mega-menu-sub-cat-td_uid_2_59b3dfe8b6a26"
+																		id="td_uid_4_59b3dfe8b6f99"
+																		data-td_block_id="td_uid_2_59b3dfe8b6a26"
+																		data-td_filter_value="4"
+																		href="https://demo.tagdiv.com/newspaper_lifestyle/category/lifestyle/beauty/">Beauty</a><a
+																		class="mega-menu-sub-cat-td_uid_2_59b3dfe8b6a26"
+																		id="td_uid_5_59b3dfe8b7002"
+																		data-td_block_id="td_uid_2_59b3dfe8b6a26"
+																		data-td_filter_value="5"
+																		href="https://demo.tagdiv.com/newspaper_lifestyle/category/lifestyle/culture/">Culture</a><a
+																		class="mega-menu-sub-cat-td_uid_2_59b3dfe8b6a26"
+																		id="td_uid_6_59b3dfe8b7066"
+																		data-td_block_id="td_uid_2_59b3dfe8b6a26"
+																		data-td_filter_value="7"
+																		href="https://demo.tagdiv.com/newspaper_lifestyle/category/lifestyle/fitness/">Fitness</a><a
+																		class="mega-menu-sub-cat-td_uid_2_59b3dfe8b6a26"
+																		id="td_uid_7_59b3dfe8b70c7"
+																		data-td_block_id="td_uid_2_59b3dfe8b6a26"
+																		data-td_filter_value="9"
+																		href="https://demo.tagdiv.com/newspaper_lifestyle/category/lifestyle/parties/">Parties</a><a
+																		class="mega-menu-sub-cat-td_uid_2_59b3dfe8b6a26"
+																		id="td_uid_8_59b3dfe8b7128"
+																		data-td_block_id="td_uid_2_59b3dfe8b6a26"
+																		data-td_filter_value="10"
+																		href="https://demo.tagdiv.com/newspaper_lifestyle/category/lifestyle/social/">Social</a>
+																</div>
+															</div>
+															<div id="td_uid_2_59b3dfe8b6a26" class="td_block_inner">
+																<div class="td-mega-row">
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-apollo-astronauts-harmed-by-deep-space-radiation/"
+																						rel="bookmark"
+																						title="Apollo Astronauts Harmed by Deep Space Radiation"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/42-218x150.jpg"
+																						alt=""
+																						title="Apollo Astronauts Harmed by Deep Space Radiation"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/lifestyle/social/"
+																					class="td-post-category">Social</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-apollo-astronauts-harmed-by-deep-space-radiation/"
+																						rel="bookmark"
+																						title="Apollo Astronauts Harmed by Deep Space Radiation">Apollo
+																						Astronauts Harmed by Deep Space Radiation</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-he-speaks-11-languages-7-tricks-to-learn-any-language/"
+																						rel="bookmark"
+																						title="He Speaks 11 Languages – 7 Tricks To Learn Any Language"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/41-218x150.jpg"
+																						alt=""
+																						title="He Speaks 11 Languages – 7 Tricks To Learn Any Language"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/lifestyle/social/"
+																					class="td-post-category">Social</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-he-speaks-11-languages-7-tricks-to-learn-any-language/"
+																						rel="bookmark"
+																						title="He Speaks 11 Languages – 7 Tricks To Learn Any Language">He
+																						Speaks 11 Languages – 7 Tricks To Learn Any
+																						Language</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-say-goodbye-to-snoring-say-hello-to-sleep/"
+																						rel="bookmark"
+																						title="Say Goodbye To Snoring, Say Hello to Sleep"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/40-218x150.jpg"
+																						alt=""
+																						title="Say Goodbye To Snoring, Say Hello to Sleep"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/lifestyle/social/"
+																					class="td-post-category">Social</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-say-goodbye-to-snoring-say-hello-to-sleep/"
+																						rel="bookmark"
+																						title="Say Goodbye To Snoring, Say Hello to Sleep">Say
+																						Goodbye To Snoring, Say Hello to Sleep</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-how-america-can-stop-wasting-161b-of-food-a-year/"
+																						rel="bookmark"
+																						title="How America Can Stop Wasting $161B of Food a Year"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/39-218x150.jpg"
+																						alt=""
+																						title="How America Can Stop Wasting $161B of Food a Year"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/lifestyle/social/"
+																					class="td-post-category">Social</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-how-america-can-stop-wasting-161b-of-food-a-year/"
+																						rel="bookmark"
+																						title="How America Can Stop Wasting $161B of Food a Year">How
+																						America Can Stop Wasting $161B of Food a Year</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="td-next-prev-wrap">
+																<a href="#" class="td-ajax-prev-page ajax-page-disabled"
+																	id="prev-page-td_uid_2_59b3dfe8b6a26"
+																	data-td_block_id="td_uid_2_59b3dfe8b6a26"><i
+																	class="td-icon-font td-icon-menu-left"></i></a><a href="#"
+																	class="td-ajax-next-page"
+																	id="next-page-td_uid_2_59b3dfe8b6a26"
+																	data-td_block_id="td_uid_2_59b3dfe8b6a26"><i
+																	class="td-icon-font td-icon-menu-right"></i></a>
+															</div>
+															<div class="clearfix"></div>
+														</div>
+													</div>
+												</div></li>
+										</ul></li>
+									<li
+										class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-mega-menu menu-item-155"><a
+										href="https://demo.tagdiv.com/newspaper_lifestyle/category/fashion/"
+										class="sf-with-ul">Fashion<i class="fa fa-angle-down"></i></a>
+										<ul class="sub-menu"
+											style="display: none; float: none; width: 20em;">
+											<li class="menu-item-0"
+												style="white-space: normal; float: left; width: 100%;"><div
+													class="td-container-border">
+													<div class="td-mega-grid">
+														<div
+															class="td_block_wrap td_block_mega_menu td_uid_9_59b3dfe8b7ae8_rand td-no-subcats td_with_ajax_pagination td-pb-border-top td_block_template_8"
+															data-td-block-uid="td_uid_9_59b3dfe8b7ae8">
+															<script>
+																var block_td_uid_9_59b3dfe8b7ae8 = new tdBlock();
+																block_td_uid_9_59b3dfe8b7ae8.id = "td_uid_9_59b3dfe8b7ae8";
+																block_td_uid_9_59b3dfe8b7ae8.atts = '{"limit":"5","sort":"","post_ids":"","tag_slug":"","autors_id":"","installed_post_types":"","category_id":"11","category_ids":"","custom_title":"","custom_url":"","show_child_cat":30,"sub_cat_ajax":"","ajax_pagination":"next_prev","header_color":"","header_text_color":"","ajax_pagination_infinite_stop":"","td_column_number":3,"td_ajax_preloading":"","td_ajax_filter_type":"td_category_ids_filter","td_ajax_filter_ids":"","td_filter_default_txt":"All","color_preset":"","border_top":"","class":"td_uid_9_59b3dfe8b7ae8_rand","el_class":"","offset":"","css":"","tdc_css":"","tdc_css_class":"td_uid_9_59b3dfe8b7ae8_rand","live_filter":"","live_filter_cur_post_id":"","live_filter_cur_post_author":"","block_template_id":""}';
+																block_td_uid_9_59b3dfe8b7ae8.td_column_number = "3";
+																block_td_uid_9_59b3dfe8b7ae8.block_type = "td_block_mega_menu";
+																block_td_uid_9_59b3dfe8b7ae8.post_count = "5";
+																block_td_uid_9_59b3dfe8b7ae8.found_posts = "6";
+																block_td_uid_9_59b3dfe8b7ae8.header_color = "";
+																block_td_uid_9_59b3dfe8b7ae8.ajax_pagination_infinite_stop = "";
+																block_td_uid_9_59b3dfe8b7ae8.max_num_pages = "2";
+																tdBlocksArray
+																		.push(block_td_uid_9_59b3dfe8b7ae8);
+															</script>
+															<div id="td_uid_9_59b3dfe8b7ae8" class="td_block_inner">
+																<div class="td-mega-row">
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-best-tips-on-how-to-wear-sneakers-to-work/"
+																						rel="bookmark"
+																						title="Best Tips on How to Wear Sneakers to Work"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/48-218x150.jpg"
+																						alt=""
+																						title="Best Tips on How to Wear Sneakers to Work"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/fashion/"
+																					class="td-post-category">Fashion</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-best-tips-on-how-to-wear-sneakers-to-work/"
+																						rel="bookmark"
+																						title="Best Tips on How to Wear Sneakers to Work">Best
+																						Tips on How to Wear Sneakers to Work</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-official-designers-for-the-industry-giants/"
+																						rel="bookmark"
+																						title="Official Designers for the Industry Giants"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/47-218x150.jpg"
+																						alt=""
+																						title="Official Designers for the Industry Giants"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/fashion/"
+																					class="td-post-category">Fashion</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-official-designers-for-the-industry-giants/"
+																						rel="bookmark"
+																						title="Official Designers for the Industry Giants">Official
+																						Designers for the Industry Giants</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-why-the-pajama-top-should-be-your-summer-uniform/"
+																						rel="bookmark"
+																						title="Why the Pajama Top Should Be Your Summer Uniform"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/46-218x150.jpg"
+																						alt=""
+																						title="Why the Pajama Top Should Be Your Summer Uniform"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/fashion/"
+																					class="td-post-category">Fashion</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-why-the-pajama-top-should-be-your-summer-uniform/"
+																						rel="bookmark"
+																						title="Why the Pajama Top Should Be Your Summer Uniform">Why
+																						the Pajama Top Should Be Your Summer Uniform</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-looking-shady-essential-sunglasses-for-the-summer/"
+																						rel="bookmark"
+																						title="Looking Shady: Essential Sunglasses for the Summer"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/45-218x150.jpg"
+																						alt=""
+																						title="Looking Shady: Essential Sunglasses for the Summer"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/fashion/"
+																					class="td-post-category">Fashion</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-looking-shady-essential-sunglasses-for-the-summer/"
+																						rel="bookmark"
+																						title="Looking Shady: Essential Sunglasses for the Summer">Looking
+																						Shady: Essential Sunglasses for the Summer</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-celebrating-body-empowerment-with-real-women/"
+																						rel="bookmark"
+																						title="Celebrating Body Empowerment with Real Women"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/44-218x150.jpg"
+																						alt=""
+																						title="Celebrating Body Empowerment with Real Women"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/fashion/"
+																					class="td-post-category">Fashion</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-celebrating-body-empowerment-with-real-women/"
+																						rel="bookmark"
+																						title="Celebrating Body Empowerment with Real Women">Celebrating
+																						Body Empowerment with Real Women</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="td-next-prev-wrap">
+																<a href="#" class="td-ajax-prev-page ajax-page-disabled"
+																	id="prev-page-td_uid_9_59b3dfe8b7ae8"
+																	data-td_block_id="td_uid_9_59b3dfe8b7ae8"><i
+																	class="td-icon-font td-icon-menu-left"></i></a><a href="#"
+																	class="td-ajax-next-page"
+																	id="next-page-td_uid_9_59b3dfe8b7ae8"
+																	data-td_block_id="td_uid_9_59b3dfe8b7ae8"><i
+																	class="td-icon-font td-icon-menu-right"></i></a>
+															</div>
+															<div class="clearfix"></div>
+														</div>
+													</div>
+												</div></li>
+										</ul></li>
+									<li
+										class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-mega-menu menu-item-159"><a
+										href="https://demo.tagdiv.com/newspaper_lifestyle/category/travel/"
+										class="sf-with-ul">Travel<i class="fa fa-angle-down"></i></a>
+										<ul class="sub-menu"
+											style="display: none; float: none; width: 20em;">
+											<li class="menu-item-0"
+												style="white-space: normal; float: left; width: 100%;"><div
+													class="td-container-border">
+													<div class="td-mega-grid">
+														<div
+															class="td_block_wrap td_block_mega_menu td_uid_10_59b3dfe8b88f7_rand td-no-subcats td_with_ajax_pagination td-pb-border-top td_block_template_8"
+															data-td-block-uid="td_uid_10_59b3dfe8b88f7">
+															<script>
+																var block_td_uid_10_59b3dfe8b88f7 = new tdBlock();
+																block_td_uid_10_59b3dfe8b88f7.id = "td_uid_10_59b3dfe8b88f7";
+																block_td_uid_10_59b3dfe8b88f7.atts = '{"limit":"5","sort":"","post_ids":"","tag_slug":"","autors_id":"","installed_post_types":"","category_id":"14","category_ids":"","custom_title":"","custom_url":"","show_child_cat":30,"sub_cat_ajax":"","ajax_pagination":"next_prev","header_color":"","header_text_color":"","ajax_pagination_infinite_stop":"","td_column_number":3,"td_ajax_preloading":"","td_ajax_filter_type":"td_category_ids_filter","td_ajax_filter_ids":"","td_filter_default_txt":"All","color_preset":"","border_top":"","class":"td_uid_10_59b3dfe8b88f7_rand","el_class":"","offset":"","css":"","tdc_css":"","tdc_css_class":"td_uid_10_59b3dfe8b88f7_rand","live_filter":"","live_filter_cur_post_id":"","live_filter_cur_post_author":"","block_template_id":""}';
+																block_td_uid_10_59b3dfe8b88f7.td_column_number = "3";
+																block_td_uid_10_59b3dfe8b88f7.block_type = "td_block_mega_menu";
+																block_td_uid_10_59b3dfe8b88f7.post_count = "5";
+																block_td_uid_10_59b3dfe8b88f7.found_posts = "6";
+																block_td_uid_10_59b3dfe8b88f7.header_color = "";
+																block_td_uid_10_59b3dfe8b88f7.ajax_pagination_infinite_stop = "";
+																block_td_uid_10_59b3dfe8b88f7.max_num_pages = "2";
+																tdBlocksArray
+																		.push(block_td_uid_10_59b3dfe8b88f7);
+															</script>
+															<div id="td_uid_10_59b3dfe8b88f7" class="td_block_inner">
+																<div class="td-mega-row">
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-swimming-the-crystal-waters-of-the-blue-lagoon/"
+																						rel="bookmark"
+																						title="Swimming the Crystal Waters of the Blue Lagoon"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/66-218x150.jpg"
+																						alt=""
+																						title="Swimming the Crystal Waters of the Blue Lagoon"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/travel/"
+																					class="td-post-category">Travel</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-swimming-the-crystal-waters-of-the-blue-lagoon/"
+																						rel="bookmark"
+																						title="Swimming the Crystal Waters of the Blue Lagoon">Swimming
+																						the Crystal Waters of the Blue Lagoon</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-mauritius-five-star-luxury-and-wildlife-encounters/"
+																						rel="bookmark"
+																						title="Mauritius: Five Star Luxury and Wildlife Encounters"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/65-218x150.jpg"
+																						alt=""
+																						title="Mauritius: Five Star Luxury and Wildlife Encounters"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/travel/"
+																					class="td-post-category">Travel</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-mauritius-five-star-luxury-and-wildlife-encounters/"
+																						rel="bookmark"
+																						title="Mauritius: Five Star Luxury and Wildlife Encounters">Mauritius:
+																						Five Star Luxury and Wildlife Encounters</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-discovering-sydneys-must-see-attractions/"
+																						rel="bookmark"
+																						title="Discovering Sydney’s Must-See Attractions"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/64-218x150.jpg"
+																						alt=""
+																						title="Discovering Sydney’s Must-See Attractions"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/travel/"
+																					class="td-post-category">Travel</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-discovering-sydneys-must-see-attractions/"
+																						rel="bookmark"
+																						title="Discovering Sydney’s Must-See Attractions">Discovering
+																						Sydney’s Must-See Attractions</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-get-lost-in-italy-and-get-ready-for-adventure/"
+																						rel="bookmark"
+																						title="Get Lost in Italy and Get Ready for Adventure!"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/63-218x150.jpg"
+																						alt=""
+																						title="Get Lost in Italy and Get Ready for Adventure!"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/travel/"
+																					class="td-post-category">Travel</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-get-lost-in-italy-and-get-ready-for-adventure/"
+																						rel="bookmark"
+																						title="Get Lost in Italy and Get Ready for Adventure!">Get
+																						Lost in Italy and Get Ready for Adventure!</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-egypt-exploring-the-reefs-of-the-red-sea/"
+																						rel="bookmark"
+																						title="Egypt: Exploring the Reefs of the Red Sea"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/62-218x150.jpg"
+																						alt=""
+																						title="Egypt: Exploring the Reefs of the Red Sea"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/travel/"
+																					class="td-post-category">Travel</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-egypt-exploring-the-reefs-of-the-red-sea/"
+																						rel="bookmark"
+																						title="Egypt: Exploring the Reefs of the Red Sea">Egypt:
+																						Exploring the Reefs of the Red Sea</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="td-next-prev-wrap">
+																<a href="#" class="td-ajax-prev-page ajax-page-disabled"
+																	id="prev-page-td_uid_10_59b3dfe8b88f7"
+																	data-td_block_id="td_uid_10_59b3dfe8b88f7"><i
+																	class="td-icon-font td-icon-menu-left"></i></a><a href="#"
+																	class="td-ajax-next-page"
+																	id="next-page-td_uid_10_59b3dfe8b88f7"
+																	data-td_block_id="td_uid_10_59b3dfe8b88f7"><i
+																	class="td-icon-font td-icon-menu-right"></i></a>
+															</div>
+															<div class="clearfix"></div>
+														</div>
+													</div>
+												</div></li>
+										</ul></li>
+									<li
+										class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-mega-menu menu-item-169"><a
+										href="https://demo.tagdiv.com/newspaper_lifestyle/category/dining/"
+										class="sf-with-ul">Dining<i class="fa fa-angle-down"></i></a>
+										<ul class="sub-menu"
+											style="display: none; float: none; width: 20em;">
+											<li class="menu-item-0"
+												style="white-space: normal; float: left; width: 100%;"><div
+													class="td-container-border">
+													<div class="td-mega-grid">
+														<div
+															class="td_block_wrap td_block_mega_menu td_uid_11_59b3dfe8b9700_rand td-no-subcats td_with_ajax_pagination td-pb-border-top td_block_template_8"
+															data-td-block-uid="td_uid_11_59b3dfe8b9700">
+															<script>
+																var block_td_uid_11_59b3dfe8b9700 = new tdBlock();
+																block_td_uid_11_59b3dfe8b9700.id = "td_uid_11_59b3dfe8b9700";
+																block_td_uid_11_59b3dfe8b9700.atts = '{"limit":"5","sort":"","post_ids":"","tag_slug":"","autors_id":"","installed_post_types":"","category_id":"6","category_ids":"","custom_title":"","custom_url":"","show_child_cat":30,"sub_cat_ajax":"","ajax_pagination":"next_prev","header_color":"","header_text_color":"","ajax_pagination_infinite_stop":"","td_column_number":3,"td_ajax_preloading":"","td_ajax_filter_type":"td_category_ids_filter","td_ajax_filter_ids":"","td_filter_default_txt":"All","color_preset":"","border_top":"","class":"td_uid_11_59b3dfe8b9700_rand","el_class":"","offset":"","css":"","tdc_css":"","tdc_css_class":"td_uid_11_59b3dfe8b9700_rand","live_filter":"","live_filter_cur_post_id":"","live_filter_cur_post_author":"","block_template_id":""}';
+																block_td_uid_11_59b3dfe8b9700.td_column_number = "3";
+																block_td_uid_11_59b3dfe8b9700.block_type = "td_block_mega_menu";
+																block_td_uid_11_59b3dfe8b9700.post_count = "5";
+																block_td_uid_11_59b3dfe8b9700.found_posts = "6";
+																block_td_uid_11_59b3dfe8b9700.header_color = "";
+																block_td_uid_11_59b3dfe8b9700.ajax_pagination_infinite_stop = "";
+																block_td_uid_11_59b3dfe8b9700.max_num_pages = "2";
+																tdBlocksArray
+																		.push(block_td_uid_11_59b3dfe8b9700);
+															</script>
+															<div id="td_uid_11_59b3dfe8b9700" class="td_block_inner">
+																<div class="td-mega-row">
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-plan-check-modern-american-cuisine/"
+																						rel="bookmark"
+																						title="Plan Check: Modern American Cuisine"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/18-218x150.jpg"
+																						alt="" title="Plan Check: Modern American Cuisine"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/dining/"
+																					class="td-post-category">Dining</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-plan-check-modern-american-cuisine/"
+																						rel="bookmark"
+																						title="Plan Check: Modern American Cuisine">Plan
+																						Check: Modern American Cuisine</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-the-best-dining-in-the-hamptons/"
+																						rel="bookmark"
+																						title="The Best Dining in the Hamptons"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/17-218x150.jpg"
+																						alt="" title="The Best Dining in the Hamptons"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/dining/"
+																					class="td-post-category">Dining</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-the-best-dining-in-the-hamptons/"
+																						rel="bookmark"
+																						title="The Best Dining in the Hamptons">The
+																						Best Dining in the Hamptons</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-discover-the-birth-place-of-pizza/"
+																						rel="bookmark"
+																						title="Discover the Birth Place of Pizza"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/16-218x150.jpg"
+																						alt="" title="Discover the Birth Place of Pizza"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/dining/"
+																					class="td-post-category">Dining</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-discover-the-birth-place-of-pizza/"
+																						rel="bookmark"
+																						title="Discover the Birth Place of Pizza">Discover
+																						the Birth Place of Pizza</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-ny-best-summer-dessert-destinations/"
+																						rel="bookmark"
+																						title="NY Best Summer Dessert Destinations"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/15-218x150.jpg"
+																						alt="" title="NY Best Summer Dessert Destinations"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/dining/"
+																					class="td-post-category">Dining</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-ny-best-summer-dessert-destinations/"
+																						rel="bookmark"
+																						title="NY Best Summer Dessert Destinations">NY
+																						Best Summer Dessert Destinations</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-unique-wine-and-dine-experience/"
+																						rel="bookmark"
+																						title="Unique Wine and Dine Experience"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/14-218x150.jpg"
+																						alt="" title="Unique Wine and Dine Experience"></img></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/dining/"
+																					class="td-post-category">Dining</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-unique-wine-and-dine-experience/"
+																						rel="bookmark"
+																						title="Unique Wine and Dine Experience">Unique
+																						Wine and Dine Experience</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="td-next-prev-wrap">
+																<a href="#" class="td-ajax-prev-page ajax-page-disabled"
+																	id="prev-page-td_uid_11_59b3dfe8b9700"
+																	data-td_block_id="td_uid_11_59b3dfe8b9700"><i
+																	class="td-icon-font td-icon-menu-left"></i></a><a href="#"
+																	class="td-ajax-next-page"
+																	id="next-page-td_uid_11_59b3dfe8b9700"
+																	data-td_block_id="td_uid_11_59b3dfe8b9700"><i
+																	class="td-icon-font td-icon-menu-right"></i></a>
+															</div>
+															<div class="clearfix"></div>
+														</div>
+													</div>
+												</div></li>
+										</ul></li>
+									<li
+										class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-mega-menu menu-item-160"><a
+										href="https://demo.tagdiv.com/newspaper_lifestyle/category/videos/"
+										class="sf-with-ul">Videos<i class="fa fa-angle-down"></i></a>
+										<ul class="sub-menu"
+											style="display: none; float: none; width: 20em;">
+											<li class="menu-item-0"
+												style="white-space: normal; float: left; width: 100%;"><div
+													class="td-container-border">
+													<div class="td-mega-grid">
+														<div
+															class="td_block_wrap td_block_mega_menu td_uid_12_59b3dfe8ba476_rand td-no-subcats td_with_ajax_pagination td-pb-border-top td_block_template_8"
+															data-td-block-uid="td_uid_12_59b3dfe8ba476">
+															<script>
+																var block_td_uid_12_59b3dfe8ba476 = new tdBlock();
+																block_td_uid_12_59b3dfe8ba476.id = "td_uid_12_59b3dfe8ba476";
+																block_td_uid_12_59b3dfe8ba476.atts = '{"limit":"5","sort":"","post_ids":"","tag_slug":"","autors_id":"","installed_post_types":"","category_id":"15","category_ids":"","custom_title":"","custom_url":"","show_child_cat":30,"sub_cat_ajax":"","ajax_pagination":"next_prev","header_color":"","header_text_color":"","ajax_pagination_infinite_stop":"","td_column_number":3,"td_ajax_preloading":"","td_ajax_filter_type":"td_category_ids_filter","td_ajax_filter_ids":"","td_filter_default_txt":"All","color_preset":"","border_top":"","class":"td_uid_12_59b3dfe8ba476_rand","el_class":"","offset":"","css":"","tdc_css":"","tdc_css_class":"td_uid_12_59b3dfe8ba476_rand","live_filter":"","live_filter_cur_post_id":"","live_filter_cur_post_author":"","block_template_id":""}';
+																block_td_uid_12_59b3dfe8ba476.td_column_number = "3";
+																block_td_uid_12_59b3dfe8ba476.block_type = "td_block_mega_menu";
+																block_td_uid_12_59b3dfe8ba476.post_count = "5";
+																block_td_uid_12_59b3dfe8ba476.found_posts = "6";
+																block_td_uid_12_59b3dfe8ba476.header_color = "";
+																block_td_uid_12_59b3dfe8ba476.ajax_pagination_infinite_stop = "";
+																block_td_uid_12_59b3dfe8ba476.max_num_pages = "2";
+																tdBlocksArray
+																		.push(block_td_uid_12_59b3dfe8ba476);
+															</script>
+															<div id="td_uid_12_59b3dfe8ba476" class="td_block_inner">
+																<div class="td-mega-row">
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-the-5-most-incredible-body-transformations/"
+																						rel="bookmark"
+																						title="The 5 Most Incredible Body Transformations"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/maxresdefault-6-218x150.jpg"
+																						alt=""
+																						title="The 5 Most Incredible Body Transformations"></img><span
+																						class="td-video-play-ico"><img width="40"
+																							height="40" class="td-retina"
+																							src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/themes/011/images/icons/ico-video-large.png"
+																							alt="video"></img></span></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/videos/"
+																					class="td-post-category">Videos</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-the-5-most-incredible-body-transformations/"
+																						rel="bookmark"
+																						title="The 5 Most Incredible Body Transformations">The
+																						5 Most Incredible Body Transformations</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-best-upcoming-horror-movies-2016-2017-trailers/"
+																						rel="bookmark"
+																						title="Best Upcoming Horror Movies 2016 – 2017 Trailers"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/maxresdefault-12-218x150.jpg"
+																						alt=""
+																						title="Best Upcoming Horror Movies 2016 – 2017 Trailers"></img><span
+																						class="td-video-play-ico"><img width="40"
+																							height="40" class="td-retina"
+																							src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/themes/011/images/icons/ico-video-large.png"
+																							alt="video"></img></span></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/videos/"
+																					class="td-post-category">Videos</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-best-upcoming-horror-movies-2016-2017-trailers/"
+																						rel="bookmark"
+																						title="Best Upcoming Horror Movies 2016 – 2017 Trailers">Best
+																						Upcoming Horror Movies 2016 – 2017 Trailers</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-top-10-incredible-technologies-you-can-use/"
+																						rel="bookmark"
+																						title="Top 10 Incredible Technologies You Can Use"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/maxresdefault-10-218x150.jpg"
+																						alt=""
+																						title="Top 10 Incredible Technologies You Can Use"></img><span
+																						class="td-video-play-ico"><img width="40"
+																							height="40" class="td-retina"
+																							src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/themes/011/images/icons/ico-video-large.png"
+																							alt="video"></img></span></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/videos/"
+																					class="td-post-category">Videos</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-top-10-incredible-technologies-you-can-use/"
+																						rel="bookmark"
+																						title="Top 10 Incredible Technologies You Can Use">Top
+																						10 Incredible Technologies You Can Use</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-watch-really-funny-animals-do-crazy-things/"
+																						rel="bookmark"
+																						title="Watch Really Funny Animals Do Crazy Things"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/maxresdefault-13-218x150.jpg"
+																						alt=""
+																						title="Watch Really Funny Animals Do Crazy Things"></img><span
+																						class="td-video-play-ico"><img width="40"
+																							height="40" class="td-retina"
+																							src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/themes/011/images/icons/ico-video-large.png"
+																							alt="video"></img></span></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/videos/"
+																					class="td-post-category">Videos</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-watch-really-funny-animals-do-crazy-things/"
+																						rel="bookmark"
+																						title="Watch Really Funny Animals Do Crazy Things">Watch
+																						Really Funny Animals Do Crazy Things</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="td-mega-span">
+																		<div class="td_module_mega_menu td_mod_mega_menu">
+																			<div class="td-module-image">
+																				<div class="td-module-thumb">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-witness-technological-history-in-the-making/"
+																						rel="bookmark"
+																						title="Witness Technological History in the Making"><img
+																						width="218" height="150" class="entry-thumb"
+																						src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/uploads/2017/03/maxresdefault-8-218x150.jpg"
+																						alt=""
+																						title="Witness Technological History in the Making"></img><span
+																						class="td-video-play-ico"><img width="40"
+																							height="40" class="td-retina"
+																							src="https://demo.tagdiv.com/newspaper_lifestyle/wp-content/themes/011/images/icons/ico-video-large.png"
+																							alt="video"></img></span></a>
+																				</div>
+																				<a
+																					href="https://demo.tagdiv.com/newspaper_lifestyle/category/videos/"
+																					class="td-post-category">Videos</a>
+																			</div>
+																			<div class="item-details">
+																				<h3 class="entry-title td-module-title">
+																					<a
+																						href="https://demo.tagdiv.com/newspaper_lifestyle/2017/03/21/td-post-witness-technological-history-in-the-making/"
+																						rel="bookmark"
+																						title="Witness Technological History in the Making">Witness
+																						Technological History in the Making</a>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="td-next-prev-wrap">
+																<a href="#" class="td-ajax-prev-page ajax-page-disabled"
+																	id="prev-page-td_uid_12_59b3dfe8ba476"
+																	data-td_block_id="td_uid_12_59b3dfe8ba476"><i
+																	class="td-icon-font td-icon-menu-left"></i></a><a href="#"
+																	class="td-ajax-next-page"
+																	id="next-page-td_uid_12_59b3dfe8ba476"
+																	data-td_block_id="td_uid_12_59b3dfe8ba476"><i
+																	class="td-icon-font td-icon-menu-right"></i></a>
+															</div>
+															<div class="clearfix"></div>
+														</div>
+													</div>
+												</div></li>
+										</ul></li>
+									<li
+										class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children td-menu-item td-normal-menu menu-item-161"><a
+										href="#" class="sf-with-ul">More<i
+											class="fa fa-angle-down"></i></a>
+										<ul class="sub-menu"
+											style="float: none; width: 10em; display: none;">
+											<li
+												class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-156"
+												style="white-space: normal; float: left; width: 100%;"><a
+												href="https://demo.tagdiv.com/newspaper_lifestyle/category/gadgets/"
+												style="float: none; width: auto;">Gadgets</a></li>
+											<li
+												class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-158"
+												style="white-space: normal; float: left; width: 100%;"><a
+												href="https://demo.tagdiv.com/newspaper_lifestyle/category/sports/"
+												style="float: none; width: auto;">Sports</a></li>
+											<li
+												class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-170"
+												style="white-space: normal; float: left; width: 100%;"><a
+												href="https://demo.tagdiv.com/newspaper_lifestyle/category/health/"
+												style="float: none; width: auto;">Health</a></li>
+										</ul></li>
+								</ul>
+							</div>
+						</div>
+						<div class="td-search-wrapper">
+							<div id="td-top-search">
+								<div class="header-search-wrap">
+									<div class="dropdown header-search">
+										<a id="td-header-search-button" href="#" role="button"
+											class="dropdown-toggle " data-toggle="dropdown"><i
+											class="td-icon-search"></i></a> <a
+											id="td-header-search-button-mob" href="#" role="button"
+											class="dropdown-toggle " data-toggle="dropdown"><i
+											class="td-icon-search"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="header-search-wrap">
+							<div class="dropdown header-search">
+								<div class="td-drop-down-search"
+									aria-labelledby="td-header-search-button">
+									<form method="get" class="td-search-form"
+										action="https://demo.tagdiv.com/newspaper_lifestyle/">
+										<div role="search" class="td-head-form-search-wrap">
+											<input id="td-header-search" type="text" value="" name="s"
+												autocomplete="off"></input><input
+												class="wpb_button wpb_btn-inverse btn" type="submit"
+												id="td-header-search-top" value="Search"></input>
+										</div>
+									</form>
+									<div id="td-aj-search"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</h:body>
+</html>
