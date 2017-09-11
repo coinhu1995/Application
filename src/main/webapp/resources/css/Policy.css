@@ -29,12 +29,27 @@ ul li {
 
 .hidden {
 	display: none;
-	background-color: blue;
+	background-color: #e6fffa;
+	border: 2px solid #eee;
 	width: 80%;
 	left: 10%;
-	height: 200px;
+	height: 250px;
 	position: absolute;
 	z-index: 999999999;
+	width: 80%;
+}
+
+.more-p {
+	position: absolute;
+	z-index: 999999999;
+	width: 10%;
+	display: none;
+	background-color: #e6fffa;
+	color: black;
+}
+
+.more-p span {
+	color: black;
 }
 
 .menu-item-p span {
@@ -49,6 +64,10 @@ ul li {
 	display: block;
 }
 
+.menu-item-p:hover .more-p {
+	display: block;
+}
+
 .main-body-p {
 	display: block;
 	position: absolute;
@@ -59,8 +78,8 @@ ul li {
 
 .main-content-p {
 	display: block;
-	margin: 0 10%; width : 80%;
-	background-color: red;
+	margin: 0 10%;
+	width: 80%;
 	height: 500px;
 	width: 80%;
 }
@@ -71,4 +90,20 @@ ul li {
 
 .text-center {
 	text-align: center;
+}
+
+.overview-p {
+	width: 18.2%;
+	height: 100%;
+	margin-left: 1.5%;
+	float: left;
+	padding-top: 25px;
+}
+
+.overview-p .tittle-p {
+	line-height: 100%;
+	font-family: "Work Sans";
+	font-weight: 600;
+	font-size: 14px;
+	width: 100%;
 }
