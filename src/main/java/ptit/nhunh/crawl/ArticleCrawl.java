@@ -22,7 +22,7 @@ public class ArticleCrawl {
 	private BufferedWriter bw;
 
 	public ArticleCrawl() throws IOException {
-		this.urlDao = SQLDAOFactory.getDAO(SQLDAOFactory.URL);
+		this.urlDao = SQLDAOFactory.getDAO(SQLDAOFactory.ARTICLE);
 		this.bw = new BufferedWriter(new OutputStreamWriter(
 				new FileOutputStream(new File(Constants.LOG_PATH + "ArticleCrawelLog.txt"), true)));
 		this.bw.write(Utils.getCurrentTime() + "\n ------------------------------\n");
@@ -39,32 +39,59 @@ public class ArticleCrawl {
 		String category = "";
 		for (Object obj : urls) {
 			Article url = (Article) obj;
+			Document html = Utils.getHtml(url.getUrl());
 			if (url.getSource().trim().equals("vnexpress.vn")) {
 				try {
-					Document html = Utils.getHtml(url.getUrl());
-					Elements divs = html.getElementsByClass("fck_detail");
+					Elements divs = html.getElementsByClass("sidebar_1");
 					if (divs.size() > 0) {
 						title = html.getElementsByTag("h1").get(0).text();
-						content = html.getElementsByClass("fck_detail").get(0).text();
+						url.setTitle(title.trim());
+						content = divs.toString();
 						if (html.getElementsByClass("start").size() > 0) {
-							category = html.getElementsByClass("start").get(0).text();
+							category = html.getElementsByClass("start").get(0).text().trim();
+							url.setCategory(category);
 						}
-						BufferedWriter bw2 = new BufferedWriter(new OutputStreamWriter(
-								new FileOutputStream(new File(Constants.DATA_PATH + "article\\"
-										+ url.getUrl_id() + ".txt"))));
+						File f = new File(Constants.DATA_PATH + "article\\" + url.getUrl_id() + ".txt");
+						BufferedWriter bw2 = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f)));
 
-						bw2.write("<category>" + category + "</category>");
-						bw2.newLine();
-						bw2.write("<title>" + title + "</title>");
-						bw2.newLine();
-						bw2.write("<content>" + content + "</content>");
-
+						bw2.write(content);
+						url.setContentFilePath(f.getAbsolutePath());
+						if (divs.get(0).getElementsByTag("img").size() > 0) {
+							url.setImageUrl(divs.get(0).getElementsByTag("img").get(0).attr("src"));
+						} else {
+							url.setImageUrl(
+									"https://s.vnecdn.net/vnexpress/restruct/i/v46/graphics/img_logo_vne_web.gif");
+						}
+						this.urlDao.update(url);
 						bw2.close();
 					}
 					System.out.println(url.getId() + " done!");
 				} catch (IOException e) {
-					this.bw.write(String.format("%-10s", url.getId()) + "\t" + e.getMessage() + "\t"
-							+ url.getUrl());
+					this.bw.write(String.format("%-10s", url.getId()) + "\t" + e.getMessage() + "\t" + url.getUrl());
+				}
+			} else {
+				try {
+					Elements divs = html.getElementsByClass("content");
+					title = html.getElementsByTag("h1").get(0).text();
+					if (divs.size() > 0) {
+						url.setTitle(title.trim());
+						content = divs.toString();
+						File f = new File(Constants.DATA_PATH + "article\\" + url.getUrl_id() + ".txt");
+						BufferedWriter bw2 = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f)));
+
+						bw2.write(content);
+						url.setContentFilePath(f.getAbsolutePath());
+						if (divs.get(0).getElementsByTag("img").size() > 0) {
+							url.setImageUrl(divs.get(0).getElementsByTag("img").get(0).attr("src"));
+						} else {
+							url.setImageUrl("http://image.thanhnien.vn/v2/App_Themes/images/logo-tn-2.png");
+						}
+						this.urlDao.update(url);
+						bw2.close();
+					}
+					System.out.println(url.getId() + " done!");
+				} catch (IOException e) {
+					this.bw.write(String.format("%-10s", url.getId()) + "\t" + e.getMessage() + "\t" + url.getUrl());
 				}
 			}
 		}

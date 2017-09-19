@@ -30,7 +30,7 @@ public class SearchVnExpressUrlCrawler {
 	}
 
 	public void getUrl() throws SQLException {
-		this.urlDAO = SQLDAOFactory.getDAO(SQLDAOFactory.URL);
+		this.urlDAO = SQLDAOFactory.getDAO(SQLDAOFactory.ARTICLE);
 
 		this.urls = this.urlDAO.getAll();
 

@@ -6,8 +6,8 @@
 
 <ui:define name="metadata">
 	<f:metadata>
-		<f:viewAction action="#{home.init()}" />
-		<f:viewAction action="#{headerUi.init()}" />
+		<f:viewAction action="#{homeUiCtrl.init()}" />
+		<f:viewAction action="#{headerUiCtrl.init()}" />
 	</f:metadata>
 </ui:define>
 
@@ -18,8 +18,91 @@
 </h:head>
 
 <h:body>
-	<div class="main-body-p">
-		<div class="main-content-p">sadasd</div>
+	<div class="body-p">
+		<div class="content-p">
+			<div class="main-content-p">
+				<h5>Các chính sách mới</h5>
+				<h:form>
+					<h:commandLink action="#{homeUiCtrl.articleRedirect(homeUiCtrl.listNewArticle.get(0))}">
+						<div class="first-article-p"
+							style="position: relative; background-size: cover; background-image: url('#{homeUiCtrl.listNewArticle.get(0).imageUrl}');">
+							<div style="color: black;">
+								<div style="position: absolute; bottom: 0px; left: 20px;">
+									<p style="font-family: WorkSans; font-weight: 500; font-size: 24px; line-height: 32px;">#{homeUiCtrl.listNewArticle.get(0).title}</p>
+									<p>
+										#{homeUiCtrl.listNewArticle.get(0).source.toUpperCase()} -
+										#{homeUiCtrl.listNewArticle.get(0).creationTime} &nbsp;&nbsp;&nbsp;
+										#{homeUiCtrl.listNewArticle.get(0).totalComment}
+										<i class="fa fa-comment"></i>
+									</p>
+								</div>
+							</div>
+						</div>
+					</h:commandLink>
+					<ui:repeat var="m"
+						value="#{homeUiCtrl.listNewArticle.subList(1, homeUiCtrl.listNewArticle.size())}">
+
+						<div style="width: 100%; height: 200px; margin-top: 40px; border-bottom: 1px solid #eee;">
+							<h:commandLink action="#{homeUiCtrl.articleRedirect(m)}">
+								<div
+									style="width: 30%; height: 80%; float: left; background-image: url('#{m.imageUrl}'); background-size: cover;">
+								</div>
+							</h:commandLink>
+							<div style="width: 70%; height: 100%; float: left; padding-left: 10px;">
+								<h:commandLink action="#{homeUiCtrl.articleRedirect(m)}">
+									<p class="title-hover-p"
+										style="color: black; font-family: WorkSans; font-weight: 500; font-size: 18px; line-height: 32px;">#{m.title}</p>
+								</h:commandLink>
+								<p>
+									#{m.source.toUpperCase()} - #{m.creationTime} &nbsp;&nbsp;&nbsp; #{m.totalComment}
+									<i class="fa fa-comment"></i>
+								</p>
+							</div>
+						</div>
+					</ui:repeat>
+				</h:form>
+
+				<h5>Các chính được phản hồi nhiều</h5>
+				<h:form>
+					<h:commandLink action="#{homeUiCtrl.articleRedirect(homeUiCtrl.listTopResponse.get(0))}">
+						<div class="first-article-p"
+							style="position: relative; background-size: cover; background-image: url('#{homeUiCtrl.listTopResponse.get(0).imageUrl}');">
+							<div style="color: black;">
+								<div style="position: absolute; bottom: 0px; left: 20px;">
+									<p style="font-family: WorkSans; font-weight: 500; font-size: 24px; line-height: 32px;">#{homeUiCtrl.listTopResponse.get(0).title}</p>
+									<p>
+										#{homeUiCtrl.listTopResponse.get(0).source.toUpperCase()} -
+										#{homeUiCtrl.listTopResponse.get(0).creationTime} &nbsp;&nbsp;&nbsp;
+										#{homeUiCtrl.listTopResponse.get(0).totalComment}
+										<i class="fa fa-comment"></i>
+									</p>
+								</div>
+							</div>
+						</div>
+					</h:commandLink>
+					<ui:repeat var="m"
+						value="#{homeUiCtrl.listTopResponse.subList(1, homeUiCtrl.listTopResponse.size())}">
+						<div style="width: 100%; height: 200px; margin-top: 40px; border-bottom: 1px solid #eee;">
+							<div
+								style="width: 30%; height: 80%; float: left; background-image: url('#{m.imageUrl}'); background-size: cover;">
+							</div>
+							<div style="width: 70%; height: 100%; float: left; padding-left: 10px;">
+								<h:commandLink action="#{homeUiCtrl.articleRedirect(m)}">
+									<p class="title-hover-p"
+										style="color: black; font-family: WorkSans; font-weight: 500; font-size: 18px; line-height: 32px;">#{m.title}</p>
+								</h:commandLink>
+								<p>
+									#{m.source.toUpperCase()} - #{m.creationTime} &nbsp;&nbsp;&nbsp; #{m.totalComment}
+									<i class="fa fa-comment"></i>
+								</p>
+							</div>
+						</div>
+					</ui:repeat>
+				</h:form>
+			</div>
+
+			<div class="info-p"></div>
+		</div>
 	</div>
 </h:body>
 </html>

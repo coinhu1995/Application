@@ -1,6 +1,7 @@
 package ptit.nhunh.model;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import javax.faces.bean.ManagedBean;
 
@@ -34,10 +35,10 @@ public class Article implements Serializable{
 	private String source;
 	@Getter
 	@Setter
-	private int totalParComment;
+	private int totalComment;
 	@Getter
 	@Setter
-	private int totalComment;
+	private int totalParComment;
 	@Getter
 	@Setter
 	private String tag;
@@ -46,7 +47,7 @@ public class Article implements Serializable{
 	private String category;
 	@Getter
 	@Setter
-	private String creationTime;
+	private Date creationTime;
 	@Getter
 	@Setter
 	private String contentFilePath;

@@ -18,7 +18,7 @@ public class checkRightUrl {
 	}
 	
 	private void process() throws SQLException {
-		SQLDAO urlDAO = SQLDAOFactory.getDAO(SQLDAOFactory.URL);
+		SQLDAO urlDAO = SQLDAOFactory.getDAO(SQLDAOFactory.ARTICLE);
 		ArrayList<Object> urls = urlDAO.getData("select * from TblUrl where totalCmt > 0 order by id");
 		for(int i = 0; i < urls.size(); i++){
 			Article url = (Article) urls.get(i);

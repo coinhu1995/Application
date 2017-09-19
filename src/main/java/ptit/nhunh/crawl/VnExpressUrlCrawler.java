@@ -25,7 +25,7 @@ public class VnExpressUrlCrawler {
 	private SQLDAO urlDAO;
 
 	public VnExpressUrlCrawler() {
-		this.urlDAO = SQLDAOFactory.getDAO(SQLDAOFactory.URL);
+		this.urlDAO = SQLDAOFactory.getDAO(SQLDAOFactory.ARTICLE);
 		this.url = new Article();
 	}
 

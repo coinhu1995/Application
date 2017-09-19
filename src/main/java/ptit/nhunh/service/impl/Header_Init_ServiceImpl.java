@@ -16,7 +16,7 @@ import ptit.nhunh.service.Header_Init_Service;
 @Named
 public class Header_Init_ServiceImpl implements Header_Init_Service {
 
-	private SQLDAO urlDao = SQLDAOFactory.getDAO(SQLDAOFactory.URL);
+	private SQLDAO urlDao = SQLDAOFactory.getDAO(SQLDAOFactory.ARTICLE);
 
 	@Override
 	public List<Article> getArticle(String category, int limit) throws SQLException {

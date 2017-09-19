@@ -45,7 +45,7 @@ public class getUrlInfo {
 	}
 
 	public getUrlInfo() {
-		this.urlDAO = SQLDAOFactory.getDAO(SQLDAOFactory.URL);
+		this.urlDAO = SQLDAOFactory.getDAO(SQLDAOFactory.ARTICLE);
 	}
 
 	private void process(int start, int end) throws SQLException, IOException {

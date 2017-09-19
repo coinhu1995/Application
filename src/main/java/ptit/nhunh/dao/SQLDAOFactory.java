@@ -2,7 +2,7 @@ package ptit.nhunh.dao;
 
 public class SQLDAOFactory {
 	public static final int COMMENT = 1;
-	public static final int URL = 2;
+	public static final int ARTICLE = 2;
 	public static final int WORD = 3;
 	public static final int COMMENTTEST = 4;
 	
@@ -10,7 +10,7 @@ public class SQLDAOFactory {
 		switch(type){
 		case COMMENT:
 			return CommentDAO.getInstance();
-		case URL:
+		case ARTICLE:
 			return UrlDAO.getInstance();
 		case WORD:
 			return WordDAO.getInstance();

@@ -14,7 +14,7 @@ public class resetIndex {
 	private SQLDAO wordDAO;
 
 	public resetIndex() {
-		this.urlDAO = SQLDAOFactory.getDAO(SQLDAOFactory.URL);
+		this.urlDAO = SQLDAOFactory.getDAO(SQLDAOFactory.ARTICLE);
 		this.commentDAO = SQLDAOFactory.getDAO(SQLDAOFactory.COMMENT);
 		this.wordDAO = SQLDAOFactory.getDAO(SQLDAOFactory.WORD);
 	}

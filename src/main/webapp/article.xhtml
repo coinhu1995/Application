@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:define name="metadata">
+	<f:metadata>
+		<f:viewAction action="#{articleUiCtrl.init()}" />
+	</f:metadata>
+</ui:define>
+
+<ui:define name="metadata">
+	<f:metadata>
+		<f:viewAction action="#{homeUiCtrl.init()}" />
+		<f:viewAction action="#{headerUiCtrl.init()}" />
+	</f:metadata>
+</ui:define>
+
+<h:head>
+	<title>Chính sách xã hội</title>
+	<ui:include src="common/top.xhtml" />
+	<ui:include src="common/header.xhtml" />
+</h:head>
+
+<h:body>
+	<div class="body-p">
+		<h:form rendered="#{articleUiCtrl.hasData}">
+			<div class="content-p">
+				<div class="main-content-p">
+					<p>#{articleUiCtrl.article.title}</p>
+					<p>#{articleUiCtrl.content}</p>
+					<p>Trích #{articleUiCtrl.article.url}</p>
+				</div>
+				<div class="info-p"></div>
+			</div>
+		</h:form>
+		
+		<h:form rendered="#{not articleUiCtrl.hasData}">
+			<div class="content-p text-center">
+				<span>Khong co du lieu</span>
+			</div>
+		</h:form>
+	</div>
+</h:body>
+</html>

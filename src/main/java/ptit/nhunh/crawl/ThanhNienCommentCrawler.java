@@ -30,7 +30,7 @@ public class ThanhNienCommentCrawler {
 	private SQLDAO cmtDAO;
 
 	public static void main(String[] args) throws SQLException, IOException {
-		ArrayList<Object> listUrl = SQLDAOFactory.getDAO(SQLDAOFactory.URL)
+		ArrayList<Object> listUrl = SQLDAOFactory.getDAO(SQLDAOFactory.ARTICLE)
 				.getData("select * from TblUrl where source = 'thanhnien' order by id");
 		new ThanhNienCommentCrawler().process(listUrl);
 		new ThanhNienCommentCrawler().processErrorUrl();

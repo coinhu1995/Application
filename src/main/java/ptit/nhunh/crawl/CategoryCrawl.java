@@ -1,6 +1,7 @@
 package ptit.nhunh.crawl;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import ptit.nhunh.utils.Utils;
 
 public class CategoryCrawl {
 	public static void main(String[] args) throws SQLException {
-		SQLDAO urlDao = SQLDAOFactory.getDAO(SQLDAOFactory.URL);
+		SQLDAO urlDao = SQLDAOFactory.getDAO(SQLDAOFactory.ARTICLE);
 		List<Object> listUrl = urlDao.getAll();
 
 		for (int i = 0; i < listUrl.size(); i++) {
@@ -31,7 +32,11 @@ public class CategoryCrawl {
 
 					Elements span_s = doc.getElementsByClass("time");
 					if (span_s.size() > 0) {
-						((Article) listUrl.get(i)).setCreationTime(span_s.get(0).text().trim());
+						String date = span_s.get(0).text().trim();
+						((Article) listUrl.get(i))
+								.setCreationTime(new Date(Integer.parseInt(date.substring(date.lastIndexOf("/") + 1)),
+										Integer.parseInt(date.substring(date.indexOf("/") + 1, date.lastIndexOf("/"))),
+										Integer.parseInt(date.substring(0, date.indexOf("/")))));
 					}
 
 					urlDao.update(listUrl.get(i));
@@ -39,7 +44,7 @@ public class CategoryCrawl {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-			}else {
+			} else {
 				Document doc;
 				try {
 					doc = Utils.getHtml(url.getUrl());
@@ -51,7 +56,10 @@ public class CategoryCrawl {
 
 					Elements time_s = doc.getElementsByTag("time");
 					if (time_s.size() > 0) {
-						url.setCreationTime(time_s.get(0).text().trim());
+						String date = time_s.get(0).text().trim();
+						url.setCreationTime(new Date(Integer.parseInt(date.substring(date.lastIndexOf("/") + 1)),
+								Integer.parseInt(date.substring(date.indexOf("/") + 1, date.lastIndexOf("/"))),
+								Integer.parseInt(date.substring(0, date.indexOf("/")))));
 					}
 
 					urlDao.update(listUrl.get(i));

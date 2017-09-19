@@ -34,7 +34,7 @@ public class VnExpressCommentCrawler {
 
 	public VnExpressCommentCrawler() {
 		this.cmtDAO = SQLDAOFactory.getDAO(SQLDAOFactory.COMMENT);
-		this.urlDAO = SQLDAOFactory.getDAO(SQLDAOFactory.URL);
+		this.urlDAO = SQLDAOFactory.getDAO(SQLDAOFactory.ARTICLE);
 	}
 
 	public void process() throws SQLException, IOException {

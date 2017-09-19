@@ -4,7 +4,7 @@
 
 <!-- <ui:define name="metadata">
 	<f:metadata>
-		<f:viewAction action="#{headerUi.init()}" />
+		<f:viewAction action="#{headerUiCtrl.init()}" />
 	</f:metadata>
 </ui:define> -->
 
@@ -25,126 +25,32 @@
 </h:head>
 
 <h:body>
-	<div class="header-background-p"></div>
+	<div class="header-background-p">
+		<img src="../resources/img/a.jpg"></img></div>
 	<div class="menu-background-p">
 		<ul style="margin: 0 0;">
 			<li class="menu-item-p text-center">
 				<a href="home.xhtml"><span
-					class="#{headerUi.getCurrentItem() eq 'trangchu' ? 'text-blue-p' : ''}">Trang chủ</span></a>
+					class="#{headerUiCtrl.getCurrentItem() eq 'trangchu' ? 'text-blue-p' : ''}">Trang chủ</span></a>
 			</li>
 
 			<li class="menu-item-p">
 				<h:form class="text-center">
-					<h:commandLink action="#{headerUi.redirect('thoisu')}">
-						<span class="#{headerUi.getCurrentItem() eq 'thoisu' ? 'text-blue-p' : ''}">Thời sự <i
-								class="fa fa-chevron-down" aria-hidden="true"></i>
-						</span>
-					</h:commandLink>
-				</h:form>
-				<ul class="hidden">
-					<ui:repeat var="m" value="#{headerUi.listThoiSu}">
-						<h:form>
-							<h:commandLink style="color: black;" action="#{headerUi.articleRedirect(m)}">
-								<div class="overview-p">
-									<img src="https://www.w3schools.com/css/img_fjords.jpg"></img>
-									<div class="tittle-p">
-										<h:outputText value="#{headerUi.getTitle(m)}" />
-									</div>
-								</div>
-							</h:commandLink>
-						</h:form>
-					</ui:repeat>
-				</ul>
-			</li>
-
-			<li class="menu-item-p">
-				<h:form class="text-center">
-					<h:commandLink action="#{headerUi.redirect('kinhdoanh')}">
-						<span class="#{headerUi.getCurrentItem() eq 'kinhdoanh' ? 'text-blue-p' : ''}">Kinh
-							doanh <i class="fa fa-chevron-down" aria-hidden="true"></i>
-						</span>
-					</h:commandLink>
-				</h:form>
-				<ul class="hidden">
-					<ui:repeat var="m" value="#{headerUi.listKinhDoanh}">
-						<h:form>
-							<h:commandLink style="color: black;" action="#{headerUi.articleRedirect(m)}">
-								<div class="overview-p">
-									<img src="https://www.w3schools.com/css/img_fjords.jpg"></img>
-									<div class="tittle-p">
-										<h:outputText value="#{headerUi.getTitle(m)}" />
-									</div>
-								</div>
-							</h:commandLink>
-						</h:form>
-					</ui:repeat>
-				</ul>
-			</li>
-
-			<li class="menu-item-p">
-				<h:form class="text-center">
-					<h:commandLink action="#{headerUi.redirect('thegioi')}">
-						<span class="#{headerUi.getCurrentItem() eq 'thegioi' ? 'text-blue-p' : ''}">Thế giới <i
-								class="fa fa-chevron-down" aria-hidden="true"></i>
-						</span>
-					</h:commandLink>
-				</h:form>
-				<ul class="hidden">
-					<ui:repeat var="m" value="#{headerUi.listTheGioi}">
-						<h:form>
-							<h:commandLink style="color: black;" action="#{headerUi.articleRedirect(m)}">
-								<div class="overview-p">
-									<img src="https://www.w3schools.com/css/img_fjords.jpg"></img>
-									<div class="tittle-p">
-										<h:outputText value="#{headerUi.getTitle(m)}" />
-									</div>
-								</div>
-							</h:commandLink>
-						</h:form>
-					</ui:repeat>
-				</ul>
-			</li>
-
-			<li class="menu-item-p">
-				<h:form class="text-center">
-					<h:commandLink action="#{headerUi.redirect('giaoduc')}">
-						<span class="#{headerUi.getCurrentItem() eq 'giaoduc' ? 'text-blue-p' : ''}">Giáo dục <i
-								class="fa fa-chevron-down" aria-hidden="true"></i>
-						</span>
-					</h:commandLink>
-				</h:form>
-				<ul class="hidden">
-					<ui:repeat var="m" value="#{headerUi.listGiaoDuc}">
-						<h:form>
-							<h:commandLink style="color: black;" action="#{headerUi.articleRedirect(m)}">
-								<div class="overview-p">
-									<img src="https://www.w3schools.com/css/img_fjords.jpg"></img>
-									<div class="tittle-p">
-										<h:outputText value="#{headerUi.getTitle(m)}" />
-									</div>
-								</div>
-							</h:commandLink>
-						</h:form>
-					</ui:repeat>
-				</ul>
-			</li>
-
-			<li class="menu-item-p">
-				<h:form class="text-center">
-					<h:commandLink action="#{headerUi.redirect('phapluat')}">
-						<span class="#{headerUi.getCurrentItem() eq 'phapluat' ? 'text-blue-p' : ''}">Pháp luật
+					<h:commandLink action="#{headerUiCtrl.redirect('thoisu')}">
+						<span class="#{headerUiCtrl.getCurrentItem() eq 'thoisu' ? 'text-blue-p' : ''}">Thời sự
 							<i class="fa fa-chevron-down" aria-hidden="true"></i>
 						</span>
 					</h:commandLink>
 				</h:form>
 				<ul class="hidden">
-					<ui:repeat var="m" value="#{headerUi.listPhapLuat}">
+					<ui:repeat var="m" value="#{headerUiCtrl.listThoiSu}">
 						<h:form>
-							<h:commandLink style="color: black;" action="#{headerUi.articleRedirect(m)}">
+							<h:commandLink style="color: black;" action="#{headerUiCtrl.articleRedirect(m)}">
 								<div class="overview-p">
-									<img src="https://www.w3schools.com/css/img_fjords.jpg"></img>
-									<div class="tittle-p">
-										<h:outputText value="#{headerUi.getTitle(m)}" />
+									<div
+										style="width: 100%; height: 70%; background-size: cover; background-image: url('#{m.imageUrl}'); margin-bottom: 5px;"></div>
+									<div class="title-p">
+										<h:outputText value="#{headerUiCtrl.getTitle(m)}" />
 									</div>
 								</div>
 							</h:commandLink>
@@ -155,20 +61,121 @@
 
 			<li class="menu-item-p">
 				<h:form class="text-center">
-					<h:commandLink action="#{headerUi.redirect('doisong')}">
-						<span class="#{headerUi.getCurrentItem() eq 'doisong' ? 'text-blue-p' : ''}">Đời sống <i
-								class="fa fa-chevron-down" aria-hidden="true"></i>
+					<h:commandLink action="#{headerUiCtrl.redirect('kinhdoanh')}">
+						<span class="#{headerUiCtrl.getCurrentItem() eq 'kinhdoanh' ? 'text-blue-p' : ''}">Kinh
+							doanh <i class="fa fa-chevron-down" aria-hidden="true"></i>
 						</span>
 					</h:commandLink>
 				</h:form>
 				<ul class="hidden">
-					<ui:repeat var="m" value="#{headerUi.listDoiSong}">
+					<ui:repeat var="m" value="#{headerUiCtrl.listKinhDoanh}">
 						<h:form>
-							<h:commandLink style="color: black;" action="#{headerUi.articleRedirect(m)}">
+							<h:commandLink style="color: black;" action="#{headerUiCtrl.articleRedirect(m)}">
 								<div class="overview-p">
-									<img src="https://www.w3schools.com/css/img_fjords.jpg"></img>
-									<div class="tittle-p">
-										<h:outputText value="#{headerUi.getTitle(m)}" />
+									<div
+										style="width: 100%; height: 70%; background-size: cover; background-image: url('#{m.imageUrl}'); margin-bottom: 5px;"></div>
+									<div class="title-p">
+										<h:outputText value="#{headerUiCtrl.getTitle(m)}" />
+									</div>
+								</div>
+							</h:commandLink>
+						</h:form>
+					</ui:repeat>
+				</ul>
+			</li>
+
+			<li class="menu-item-p">
+				<h:form class="text-center">
+					<h:commandLink action="#{headerUiCtrl.redirect('thegioi')}">
+						<span class="#{headerUiCtrl.getCurrentItem() eq 'thegioi' ? 'text-blue-p' : ''}">Thế
+							giới <i class="fa fa-chevron-down" aria-hidden="true"></i>
+						</span>
+					</h:commandLink>
+				</h:form>
+				<ul class="hidden">
+					<ui:repeat var="m" value="#{headerUiCtrl.listTheGioi}">
+						<h:form>
+							<h:commandLink style="color: black;" action="#{headerUiCtrl.articleRedirect(m)}">
+								<div class="overview-p">
+									<div
+										style="width: 100%; height: 70%; background-size: cover; background-image: url('#{m.imageUrl}'); margin-bottom: 5px;"></div>
+									<div class="title-p">
+										<h:outputText value="#{headerUiCtrl.getTitle(m)}" />
+									</div>
+								</div>
+							</h:commandLink>
+						</h:form>
+					</ui:repeat>
+				</ul>
+			</li>
+
+			<li class="menu-item-p">
+				<h:form class="text-center">
+					<h:commandLink action="#{headerUiCtrl.redirect('giaoduc')}">
+						<span class="#{headerUiCtrl.getCurrentItem() eq 'giaoduc' ? 'text-blue-p' : ''}">Giáo
+							dục <i class="fa fa-chevron-down" aria-hidden="true"></i>
+						</span>
+					</h:commandLink>
+				</h:form>
+				<ul class="hidden">
+					<ui:repeat var="m" value="#{headerUiCtrl.listGiaoDuc}">
+						<h:form>
+							<h:commandLink style="color: black;" action="#{headerUiCtrl.articleRedirect(m)}">
+								<div class="overview-p">
+									<div
+										style="width: 100%; height: 70%; background-size: cover; background-image: url('#{m.imageUrl}'); margin-bottom: 5px;"></div>
+									<div class="title-p">
+										<h:outputText value="#{headerUiCtrl.getTitle(m)}" />
+									</div>
+								</div>
+							</h:commandLink>
+						</h:form>
+					</ui:repeat>
+				</ul>
+			</li>
+
+			<li class="menu-item-p">
+				<h:form class="text-center">
+					<h:commandLink action="#{headerUiCtrl.redirect('phapluat')}">
+						<span class="#{headerUiCtrl.getCurrentItem() eq 'phapluat' ? 'text-blue-p' : ''}">Pháp
+							luật <i class="fa fa-chevron-down" aria-hidden="true"></i>
+						</span>
+					</h:commandLink>
+				</h:form>
+				<ul class="hidden">
+					<ui:repeat var="m" value="#{headerUiCtrl.listPhapLuat}">
+						<h:form>
+							<h:commandLink style="color: black;" action="#{headerUiCtrl.articleRedirect(m)}">
+								<div class="overview-p">
+									<div
+										style="width: 100%; height: 70%; background-size: cover; background-image: url('#{m.imageUrl}'); margin-bottom: 5px;"></div>
+									<div class="title-p">
+										<h:outputText value="#{headerUiCtrl.getTitle(m)}" />
+									</div>
+								</div>
+							</h:commandLink>
+						</h:form>
+					</ui:repeat>
+				</ul>
+			</li>
+
+			<li class="menu-item-p">
+				<h:form class="text-center">
+					<h:commandLink action="#{headerUiCtrl.redirect('doisong')}">
+						<span class="#{headerUiCtrl.getCurrentItem() eq 'doisong' ? 'text-blue-p' : ''}">Đời
+							sống <i class="fa fa-chevron-down" aria-hidden="true"></i>
+						</span>
+					</h:commandLink>
+				</h:form>
+				<ul class="hidden">
+					<ui:repeat var="m" value="#{headerUiCtrl.listDoiSong}">
+						<h:form>
+							<h:commandLink style="color: black;" action="#{headerUiCtrl.articleRedirect(m)}">
+								<div class="overview-p">
+									<div
+										style="width: 100%; height: 70%; background-size: cover; background-image: url('#{m.imageUrl}'); margin-bottom: 5px;"></div>
+									<div class="title-p">
+										<h:outputText value="#{headerUiCtrl.getTitle(m)}" />
 									</div>
 								</div>
 							</h:commandLink>
@@ -183,7 +190,7 @@
 				<ul class="more-p">
 					<li>
 						<h:form>
-							<h:commandLink action="#{headerUi.redirect('congdong')}">
+							<h:commandLink action="#{headerUiCtrl.redirect('congdong')}">
 								<span>Cộng đồng <i class="fa fa-chevron-right" aria-hidden="true"></i>
 								</span>
 							</h:commandLink>
@@ -191,7 +198,7 @@
 					</li>
 					<li>
 						<h:form>
-							<h:commandLink action="#{headerUi.redirect('congdong')}">
+							<h:commandLink action="#{headerUiCtrl.redirect('congdong')}">
 								<span>Thể thao <i class="fa fa-chevron-right" aria-hidden="true"></i>
 								</span>
 							</h:commandLink>
@@ -199,7 +206,7 @@
 					</li>
 					<li>
 						<h:form>
-							<h:commandLink action="#{headerUi.redirect('congdong')}">
+							<h:commandLink action="#{headerUiCtrl.redirect('congdong')}">
 								<span>Sức khỏe <i class="fa fa-chevron-right" aria-hidden="true"></i>
 								</span>
 							</h:commandLink>
@@ -207,7 +214,7 @@
 					</li>
 					<li>
 						<h:form>
-							<h:commandLink action="#{headerUi.redirect('congdong')}">
+							<h:commandLink action="#{headerUiCtrl.redirect('congdong')}">
 								<span>Du lịch <i class="fa fa-chevron-right" aria-hidden="true"></i>
 								</span>
 							</h:commandLink>
@@ -215,7 +222,7 @@
 					</li>
 					<li>
 						<h:form>
-							<h:commandLink action="#{headerUi.redirect('congdong')}">
+							<h:commandLink action="#{headerUiCtrl.redirect('congdong')}">
 								<span>Gia đình <i class="fa fa-chevron-right" aria-hidden="true"></i>
 								</span>
 							</h:commandLink>
@@ -223,7 +230,7 @@
 					</li>
 					<li>
 						<h:form>
-							<h:commandLink action="#{headerUi.redirect('congdong')}">
+							<h:commandLink action="#{headerUiCtrl.redirect('congdong')}">
 								<span>Xe <i class="fa fa-chevron-right" aria-hidden="true"></i>
 								</span>
 							</h:commandLink>
@@ -231,7 +238,7 @@
 					</li>
 					<li>
 						<h:form>
-							<h:commandLink action="#{headerUi.redirect('congdong')}">
+							<h:commandLink action="#{headerUiCtrl.redirect('congdong')}">
 								<span>Công nghệ <i class="fa fa-chevron-right" aria-hidden="true"></i>
 								</span>
 							</h:commandLink>
@@ -239,7 +246,7 @@
 					</li>
 					<li>
 						<h:form>
-							<h:commandLink action="#{headerUi.redirect('congdong')}">
+							<h:commandLink action="#{headerUiCtrl.redirect('congdong')}">
 								<span>Số hóa <i class="fa fa-chevron-right" aria-hidden="true"></i>
 								</span>
 							</h:commandLink>
@@ -247,7 +254,7 @@
 					</li>
 					<li>
 						<h:form>
-							<h:commandLink action="#{headerUi.redirect('congdong')}">
+							<h:commandLink action="#{headerUiCtrl.redirect('congdong')}">
 								<span>Khoa học <i class="fa fa-chevron-right" aria-hidden="true"></i>
 								</span>
 							</h:commandLink>
@@ -255,7 +262,7 @@
 					</li>
 					<li>
 						<h:form>
-							<h:commandLink action="#{headerUi.redirect('congdong')}">
+							<h:commandLink action="#{headerUiCtrl.redirect('congdong')}">
 								<span>Văn hóa <i class="fa fa-chevron-right" aria-hidden="true"></i>
 								</span>
 							</h:commandLink>
@@ -263,7 +270,7 @@
 					</li>
 					<li>
 						<h:form>
-							<h:commandLink action="#{headerUi.redirect('congdong')}">
+							<h:commandLink action="#{headerUiCtrl.redirect('congdong')}">
 								<span>Tôi viết <i class="fa fa-chevron-right" aria-hidden="true"></i>
 								</span>
 							</h:commandLink>
@@ -271,7 +278,7 @@
 					</li>
 					<li>
 						<h:form>
-							<h:commandLink action="#{headerUi.redirect('congdong')}">
+							<h:commandLink action="#{headerUiCtrl.redirect('congdong')}">
 								<span>Giới trẻ <i class="fa fa-chevron-right" aria-hidden="true"></i>
 								</span>
 							</h:commandLink>

@@ -24,7 +24,7 @@ public class Search_ThanhNienUrlCrawler {
 	}
 
 	public void getUrl() throws SQLException, IOException {
-		this.urlDAO = SQLDAOFactory.getDAO(SQLDAOFactory.URL);
+		this.urlDAO = SQLDAOFactory.getDAO(SQLDAOFactory.ARTICLE);
 
 		ArrayList<Object> urls = this.urlDAO.getAll();
 

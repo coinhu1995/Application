@@ -54,7 +54,7 @@ public class AssignLabel extends javax.swing.JFrame {
 				new FileOutputStream("C:\\Users\\coinh\\Desktop\\LogAssignLabel.txt", true),
 				StandardCharsets.UTF_8));
 		this.commentDAO = SQLDAOFactory.getDAO(SQLDAOFactory.COMMENT);
-		this.urlDAO = SQLDAOFactory.getDAO(SQLDAOFactory.URL);
+		this.urlDAO = SQLDAOFactory.getDAO(SQLDAOFactory.ARTICLE);
 		this.listCmt = this.commentDAO.getAll();
 
 		this.initComponents();
