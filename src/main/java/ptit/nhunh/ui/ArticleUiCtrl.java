@@ -1,18 +1,13 @@
 package ptit.nhunh.ui;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.InputStreamReader;
 import java.io.Serializable;
-import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,6 +15,7 @@ import ptit.nhunh.context.AppContext;
 import ptit.nhunh.dao.SQLDAO;
 import ptit.nhunh.dao.SQLDAOFactory;
 import ptit.nhunh.model.Article;
+import ptit.nhunh.model.Comment;
 
 @ManagedBean
 @SessionScoped
@@ -28,6 +24,7 @@ public class ArticleUiCtrl implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private SQLDAO urlDao = SQLDAOFactory.getDAO(SQLDAOFactory.ARTICLE);
+	private SQLDAO cmtDao = SQLDAOFactory.getDAO(SQLDAOFactory.COMMENT);
 
 	@Getter
 	@Setter
@@ -35,33 +32,27 @@ public class ArticleUiCtrl implements Serializable {
 
 	@Getter
 	@Setter
-	private boolean hasData = true;
+	private List<Comment> listComment;
 
 	@Getter
 	@Setter
-	private String content = "";
+	private boolean hasData = true;
 
 	public void init() throws SQLException, FileNotFoundException {
+		this.listComment = new ArrayList<>();
 		AppContext appContext = AppContext.getInstance();
 		int id = 0;
 
 		if (appContext.getAttribute("article") != null) {
 			id = (int) appContext.getAttribute("article");
 			this.article = (Article) this.urlDao.findById(id + "");
-			try {
-				BufferedReader br = new BufferedReader(new InputStreamReader(
-						new FileInputStream(this.article.getContentFilePath()), StandardCharsets.UTF_8));
-				String line = "";
-				while ((line = br.readLine()) != null) {
-					this.content = this.content + line;
-				}
-				Document doc = Jsoup.parse(this.content);
-				this.content = doc.text();
-				br.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 
+			List<Object> listObjCmt = this.cmtDao
+					.getData("select * from TblComment where page_id = '" + this.article.getUrl_id() + "'");
+
+			for (int i = 0; i < listObjCmt.size(); i++) {
+				this.listComment.add((Comment) listObjCmt.get(i));
+			}
 		} else {
 			this.hasData = false;
 		}

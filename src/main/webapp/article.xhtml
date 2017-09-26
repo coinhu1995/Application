@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
 
@@ -21,6 +22,11 @@
 	<title>Chính sách xã hội</title>
 	<ui:include src="common/top.xhtml" />
 	<ui:include src="common/header.xhtml" />
+	<h:outputStylesheet rendered="#{articleUiCtrl.article.source eq 'vnexpress.vn' ? true : false}"
+		library="css" name="#{articleUiCtrl.article.url_id}.css" />
+	<h:outputScript library="js" name="exporting.js"></h:outputScript>
+	<h:outputScript library="js" name="highcharts.js"></h:outputScript>
+
 </h:head>
 
 <h:body>
@@ -28,14 +34,83 @@
 		<h:form rendered="#{articleUiCtrl.hasData}">
 			<div class="content-p">
 				<div class="main-content-p">
-					<p>#{articleUiCtrl.article.title}</p>
-					<p>#{articleUiCtrl.content}</p>
-					<p>Trích #{articleUiCtrl.article.url}</p>
+					<br></br>
+					<h1 style="display: #{articleUiCtrl.article.source eq 'vnexpress.vn'? 'none': 'block'}">#{articleUiCtrl.article.title}</h1>
+					<ui:include src="#{articleUiCtrl.article.contentFilePath}"></ui:include>
+					<div>
+						<p>Trích #{articleUiCtrl.article.url}</p>
+					</div>
+					<br></br>
+					<div class="ykien_vne width_common">
+						<div class="left">
+							<strong>Ý kiến bạn đọc</strong> (<label id="total_comment">#{articleUiCtrl.listComment.size()}</label>)
+						</div>
+					</div>
+
+					<ui:repeat var="m" value="#{articleUiCtrl.listComment}">
+						<div class="comment_item width_common hight_light comment-p" style="margin-bottom: 20px;">
+							<p class="full_content">#{m.content}</p>
+						</div>
+					</ui:repeat>
 				</div>
-				<div class="info-p"></div>
+				<div class="info-p">
+					<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+					<script type="text/javascript">
+						Highcharts
+								.chart(
+										'container',
+										{
+											chart : {
+												plotBackgroundColor : null,
+												plotBorderWidth : null,
+												plotShadow : false,
+												type : 'pie'
+											},
+											title : {
+												text : 'Quan điểm của người dân'
+											},
+											tooltip : {
+												pointFormat : '{series.name}: <b>{point.percentage:.1f}%</b>'
+											},
+											plotOptions : {
+												pie : {
+													allowPointSelect : true,
+													cursor : 'pointer',
+													dataLabels : {
+														enabled : true,
+														format : '<b>{point.name}</b>: {point.percentage:.1f} %',
+														style : {
+															color : 'black'
+														}
+													}
+												}
+											},
+											series : [ {
+												name : 'Brands',
+												colorByPoint : true,
+												data : [ {
+													name : 'Đồng ý',
+													y : #{articleUiCtrl.article.dongy}
+												}, {
+													name : 'Không đồng ý',
+													y : #{articleUiCtrl.article.khongdongy}
+												}, {
+													name : 'Góp ý',
+													y : #{articleUiCtrl.article.gopy},
+													sliced : true,
+													selected : true
+												}, {
+													name : 'Ý kiến khác',
+													y : #{articleUiCtrl.article.ykienkhac}
+												} ]
+											} ]
+										});
+					</script>
+				</div>
 			</div>
 		</h:form>
-		
+
 		<h:form rendered="#{not articleUiCtrl.hasData}">
 			<div class="content-p text-center">
 				<span>Khong co du lieu</span>

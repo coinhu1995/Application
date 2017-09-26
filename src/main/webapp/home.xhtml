@@ -20,12 +20,18 @@
 <h:body>
 	<div class="body-p">
 		<div class="content-p">
-			<div class="main-content-p">
-				<h5>Các chính sách mới</h5>
+			<div class="main-content-p width-80-p margin-5-p">
+				<div style="padding: 5px 5px; background-color: #eceeed; width: 15%; margin-top: 10px;">
+					<h3>
+						<span title="Trang nhất">Các chính sách mới</span>
+					</h3>
+				</div>
 				<h:form>
 					<h:commandLink action="#{homeUiCtrl.articleRedirect(homeUiCtrl.listNewArticle.get(0))}">
 						<div class="first-article-p"
 							style="position: relative; background-size: cover; background-image: url('#{homeUiCtrl.listNewArticle.get(0).imageUrl}');">
+							<div class="first-article-p"
+								style="position: relative; background-size: cover; background-image: url('#{homeUiCtrl.listNewArticle.get(0).imageUrl}');"></div>
 							<div style="color: black;">
 								<div style="position: absolute; bottom: 0px; left: 20px;">
 									<p style="font-family: WorkSans; font-weight: 500; font-size: 24px; line-height: 32px;">#{homeUiCtrl.listNewArticle.get(0).title}</p>
@@ -61,8 +67,11 @@
 						</div>
 					</ui:repeat>
 				</h:form>
-
-				<h5>Các chính được phản hồi nhiều</h5>
+				<div style="padding: 5px 5px; background-color: #eceeed; width: 25%; margin-top: 10px;">
+					<h3>
+						<span title="Trang nhất">Các chính được phản hồi nhiều</span>
+					</h3>
+				</div>
 				<h:form>
 					<h:commandLink action="#{homeUiCtrl.articleRedirect(homeUiCtrl.listTopResponse.get(0))}">
 						<div class="first-article-p"
@@ -101,7 +110,7 @@
 				</h:form>
 			</div>
 
-			<div class="info-p"></div>
+			<div class=""></div>
 		</div>
 	</div>
 </h:body>

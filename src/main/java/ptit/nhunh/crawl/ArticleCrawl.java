@@ -39,48 +39,93 @@ public class ArticleCrawl {
 		String category = "";
 		for (Object obj : urls) {
 			Article url = (Article) obj;
-			Document html = Utils.getHtml(url.getUrl());
 			if (url.getSource().trim().equals("vnexpress.vn")) {
-				try {
-					Elements divs = html.getElementsByClass("sidebar_1");
-					if (divs.size() > 0) {
-						title = html.getElementsByTag("h1").get(0).text();
-						url.setTitle(title.trim());
-						content = divs.toString();
-						if (html.getElementsByClass("start").size() > 0) {
-							category = html.getElementsByClass("start").get(0).text().trim();
-							url.setCategory(category);
-						}
-						File f = new File(Constants.DATA_PATH + "article\\" + url.getUrl_id() + ".txt");
-						BufferedWriter bw2 = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f)));
-
-						bw2.write(content);
-						url.setContentFilePath(f.getAbsolutePath());
-						if (divs.get(0).getElementsByTag("img").size() > 0) {
-							url.setImageUrl(divs.get(0).getElementsByTag("img").get(0).attr("src"));
-						} else {
-							url.setImageUrl(
-									"https://s.vnecdn.net/vnexpress/restruct/i/v46/graphics/img_logo_vne_web.gif");
-						}
-						this.urlDao.update(url);
-						bw2.close();
-					}
-					System.out.println(url.getId() + " done!");
-				} catch (IOException e) {
-					this.bw.write(String.format("%-10s", url.getId()) + "\t" + e.getMessage() + "\t" + url.getUrl());
-				}
+//				Document html = Utils.getHtml(url.getUrl());
+//				try {
+//					Elements divs = html.getElementsByClass("sidebar_1");
+//					if (divs.size() > 0) {
+//						title = html.getElementsByTag("h1").get(0).text();
+//						url.setTitle(title.trim());
+//						content = divs.toString();
+//
+//						Elements imgs = divs.get(0).getElementsByTag("img");
+//						for (int i = 0; i < imgs.size(); i++) {
+//							content = content.replace(imgs.get(i).toString(), imgs.get(i).toString() + "</img>");
+//						}
+//						Elements brs = divs.get(0).getElementsByTag("br");
+//						for (int i = 0; i < brs.size(); i++) {
+//							content = content.replace(brs.get(i).toString(), brs.get(i).toString() + "</br>");
+//						}
+//						if (html.getElementsByClass("start").size() > 0) {
+//							category = html.getElementsByClass("start").get(0).text().trim();
+//							url.setCategory(category);
+//						}
+//						File folder = new File(Constants.VNEXPRESS_ARTICLE_PATH + url.getUrl_id());
+//
+//						if (!folder.exists()) {
+//							folder.mkdirs();
+//						}
+//
+//						File f_css = new File(Constants.CSS + url.getUrl_id() + ".css");
+//						BufferedWriter bw_css = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f_css)));
+//						Elements styles = html.getElementsByTag("style");
+//
+//						for (int i = 0; i < styles.size(); i++) {
+//							bw_css.write(styles.get(i).toString());
+//						}
+//
+//						File f = new File(
+//								Constants.VNEXPRESS_ARTICLE_PATH + url.getUrl_id() + "\\" + url.getUrl_id() + ".xhtml");
+//						BufferedWriter bw2 = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f)));
+//						
+//						content = content.replace("href=\"javascript:;\"", "");
+//						content = content.replace("data-href", "href");
+//						
+//						bw2.write(Constants.PREFIX_CONTENT);
+//						bw2.write(content.replace("<br>", "<br></br>"));
+//						bw2.write(Constants.SUFFIX_CONTENT);
+//
+//						url.setContentFilePath(f.getPath().replace("src\\main\\webapp\\", ""));
+//						if (divs.get(0).getElementsByTag("img").size() > 0) {
+//							url.setImageUrl(divs.get(0).getElementsByTag("img").get(0).attr("src"));
+//						} else {
+//							url.setImageUrl(
+//									"https://s.vnecdn.net/vnexpress/restruct/i/v46/graphics/img_logo_vne_web.gif");
+//						}
+//						this.urlDao.update(url);
+//						bw_css.close();
+//						bw2.close();
+//					}
+//					System.out.println(url.getId() + " done!");
+//				} catch (IOException e) {
+//					this.bw.write(String.format("%-10s", url.getId()) + "\t" + e.getMessage() + "\t" + url.getUrl());
+//				}
 			} else {
+				Document html = Utils.getHtml(url.getUrl());
 				try {
 					Elements divs = html.getElementsByClass("content");
 					title = html.getElementsByTag("h1").get(0).text();
 					if (divs.size() > 0) {
 						url.setTitle(title.trim());
 						content = divs.toString();
-						File f = new File(Constants.DATA_PATH + "article\\" + url.getUrl_id() + ".txt");
+						Elements imgs = divs.get(0).getElementsByTag("img");
+						for (int i = 0; i < imgs.size(); i++) {
+							content = content.replace(imgs.get(i).toString(), imgs.get(i).toString() + "</img>");
+						}
+						Elements brs = divs.get(0).getElementsByTag("br");
+						for (int i = 0; i < brs.size(); i++) {
+							content = content.replace(brs.get(i).toString(), brs.get(i).toString() + "</br>");
+						}
+						File f = new File(Constants.THANHNIEN_ARTICLE_PATH + url.getUrl_id() + ".xhtml");
 						BufferedWriter bw2 = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f)));
-
+						
+						content = content.replace("<a href=\"/", "<a href=\"/http://thanhnien.vn/");
+						
+						bw2.write(Constants.PREFIX_CONTENT);
 						bw2.write(content);
-						url.setContentFilePath(f.getAbsolutePath());
+						bw2.write(Constants.SUFFIX_CONTENT);
+
+						url.setContentFilePath(f.getPath().replace("src\\main\\webapp\\", ""));
 						if (divs.get(0).getElementsByTag("img").size() > 0) {
 							url.setImageUrl(divs.get(0).getElementsByTag("img").get(0).attr("src"));
 						} else {

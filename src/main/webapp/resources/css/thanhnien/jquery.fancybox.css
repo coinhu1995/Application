@@ -1,0 +1,267 @@
+/*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
+.fancybox-wrap,
+.fancybox-skin,
+.fancybox-outer,
+.fancybox-inner,
+.fancybox-image,
+.fancybox-wrap iframe,
+.fancybox-wrap object,
+.fancybox-nav,
+.fancybox-nav span,
+.fancybox-tmp
+{
+	padding: 0;
+	margin: 0;
+	border: 0;
+	outline: none;
+	vertical-align: top;
+}
+.fancybox-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 8020;
+}
+.fancybox-skin {
+	position: relative;
+	padding: 0 !important;
+}
+.fancybox-opened {
+	z-index: 8030;
+}
+.fancybox-outer, .fancybox-inner {
+	position: relative;
+}
+.fancybox-inner {
+	overflow: hidden;
+}
+.fancybox-type-iframe .fancybox-inner {
+	-webkit-overflow-scrolling: touch;
+}
+.fancybox-error {
+	font-size: 14px;
+	margin: 0;
+	padding: 15px;
+	white-space: nowrap;
+}
+.fancybox-image, .fancybox-iframe {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.fancybox-image {
+	max-width: 100%;
+	max-height: 100%;
+}
+#fancybox-loading {
+	display: none;
+}
+.fancybox-nav {
+	position: fixed;
+    top: 0;
+    width: 10%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 8040;
+}
+.fancybox-prev {
+	left: 0;
+}
+.fancybox-next {
+	right: 0;
+}
+.fancybox-nav span {
+	position: fixed;
+    top: 47%;
+    width: 35px;
+    height: 65px;
+    cursor: pointer;
+    z-index: 8040;
+    background: url(../images/sprite.png) 0 0 no-repeat;
+}
+.fancybox-nav span:active {
+	margin-top: 1px;
+}
+.fancybox-prev span {
+	left: 20px;
+    background-position: 0px -128px;
+}
+.fancybox-next span {
+	right: 20px;
+    background-position: -37px -128px;
+}
+.fancybox-tmp {
+	position: absolute;
+	top: -99999px;
+	left: -99999px;
+	visibility: hidden;
+	max-width: 99999px;
+	max-height: 99999px;
+	overflow: visible !important;
+}
+
+/* Overlay helper */
+.fancybox-lock {
+    overflow: hidden !important;
+    width: auto;
+}
+.fancybox-lock body {
+    overflow: hidden !important;
+}
+.fancybox-lock-test {
+    overflow-y: hidden !important;
+}
+.fancybox-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	display: none;
+	z-index: 999;
+	background: #000;
+}
+.fancybox-overlay-fixed {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+.fancybox-lock .fancybox-overlay {
+	overflow: auto;
+}
+
+/* Title helper */
+.fancybox-title {
+	visibility: hidden;
+    position: fixed;
+    text-shadow: none;
+    z-index: 8050;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #0e688a;
+    color: white;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px 15px;
+    font-family: 'Roboto-Bold',Arial,Helvetica,sans-serif;
+    text-align: center;
+}
+.fancybox-opened .fancybox-title {
+	visibility: visible;
+}
+.fancybox-title-outside-wrap {
+	position: relative;
+	margin-top: 10px;
+	color: #fff;
+}
+
+
+/* Button Helper */
+#fancybox-buttons {
+	position: fixed;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+	z-index: 100000;
+}
+#fancybox-buttons.top {
+	top: 0;
+}
+#fancybox-buttons ul {
+	display: block;
+    height: 42px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#fancybox-buttons ul li {
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+#fancybox-buttons ul li:nth-child(3n) a {
+	margin-right: 0;
+}
+#fancybox-buttons a {
+	display: block;
+	outline: none;
+	opacity: 0.8;
+	font-size: 12px;
+	color: #fff;
+	padding: 0 15px 0 25px;
+	line-height: 47px;
+	border-right: 1px solid #444;
+	margin-right: 15px;
+}
+#fancybox-buttons a:hover {
+	opacity: 1;
+}
+#fancybox-buttons #facebookbox {
+	background: #fff;
+    padding-left: 15px;
+    line-height: inherit;
+    opacity: 0.9;
+    margin-top: 13px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+}
+#fancybox-buttons a.btnPlay {
+	background: url(../images/fancy-autoplay.png) 0 15px no-repeat;
+}
+#fancybox-buttons a.btnPlayOn {
+	background: url(../images/fancy-pause.png) 0 14px no-repeat;
+}
+#fancybox-buttons a.btnToggle {
+	background: url(../images/fancybox-expand.png) 0 13px no-repeat;
+}
+#fancybox-buttons a.btnToggleOn {
+	background: url(../images/fancybox-colspand.png) 0 13px no-repeat;
+}
+#fancybox-buttons a.btnClose {
+	position: fixed;
+    top: 7px;
+    right: 20px;
+    background: url(../images/sprite.png) -159px 0 no-repeat;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+}
+#fancybox-buttons a.btnDisabled {
+	opacity : 0.4;
+	cursor: default;
+}
+
+@media screen and (min-width:1600px) {
+	#fancybox-buttons ul { width: 20%;}
+}
+@media screen and (min-width:1366px) and (max-width:1599px) {
+	#fancybox-buttons ul { width: 28%;}
+}
+@media screen and (min-width:1280px) and (max-width:1365px) {
+	#fancybox-buttons ul { width: 30%;}
+}
+@media screen and (min-width:1024px) and (max-width:1279px) {
+	#fancybox-buttons ul { width: 37%;}
+}
+@media screen and (min-width:980px) and (max-width:1023px) { 
+	#fancybox-buttons ul { width: 39%;}
+}
+@media screen and (min-width:845px) and (max-width:979px) {
+	#fancybox-buttons ul { width: 45%;}
+}
+@media screen and (min-width:768px) and (max-width:844px) {
+	#fancybox-buttons ul { width: 49%;}
+}
+@media screen and (min-width:700px) and (max-width:767px) {
+	#fancybox-buttons ul { width: 54%;}
+}
+@media screen and (min-width:540px) and (max-width:699px) {
+	#fancybox-buttons ul { width: 69%;}
+}
+@media screen and (min-width:480px) and (max-width:539px) {
+	#fancybox-buttons ul { width: 78%;}
+}

@@ -1,0 +1,68 @@
+#main_detail .rmp-color-button * {
+    color: #fff;
+}
+#main_detail .rmp-abr-active,
+#main_detail .rmp-i:hover {
+    color: #2196f3;
+}
+#main_detail .rmp-play-pause,
+#main_detail .rmp-volume,
+#main_detail .rmp-fullscreen {
+    font-size: 22px !important;
+    line-height: 38px !important;
+}
+#main_detail .rmp-time-elapsed,
+#main_detail .rmp-duration {
+    font-size: 12px !important;
+    line-height: 38px !important;
+}
+#main_detail .rmp-cc>.rmp-module-button>.rmp-i-cc {
+    font-size: 32px !important;
+    line-height: 40px !important;
+}
+#main_detail .rmp-i-sharing {
+    font-size: 22px !important;
+    line-height: 40px !important;
+}
+#main_detail .rmp-overlay-button>.rmp-i-play, .rmp-overlay-button>.rmp-i-replay {
+    font-size: 34px !important;
+    line-height: 50px !important;
+}
+#main_detail .rmp-container .rmp-ad-skip-button {
+    font-size: 14px !important;
+    padding: 8px 12px;
+}
+.rmp-ad-info, .rmp-cc {
+    display: none !important;
+}
+.rmp-sharing-close {
+    font-size: 22px !important;
+    line-height: 38px !important;
+}
+.rmp-sharing .rmp-i-sharing {
+    font-size: 22px !important;
+}
+.rmp-container .rmp-ad-skip-button {
+    font-family: Arial;
+    font-size: 14px !important;
+    text-transform: uppercase;
+    padding: 0 12px;
+    left: inherit;
+    right: 0;
+    top: inherit;
+    bottom: 38px;
+    width: auto;
+    height: auto;
+}
+.rmp-container .rmp-ad-skip-button:before {
+    content: "";
+}
+.rmp-sharing-input {
+    color: #000;
+}
+
+@media screen and (max-width:480px) {
+    .rmp-time-elapsed, .rmp-duration {
+        display: none;
+    }
+}
