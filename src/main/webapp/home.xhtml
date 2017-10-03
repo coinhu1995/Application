@@ -30,18 +30,17 @@
 					<h:commandLink action="#{homeUiCtrl.articleRedirect(homeUiCtrl.listNewArticle.get(0))}">
 						<div class="first-article-p"
 							style="position: relative; background-size: cover; background-image: url('#{homeUiCtrl.listNewArticle.get(0).imageUrl}');">
-							<div class="first-article-p"
-								style="position: relative; background-size: cover; background-image: url('#{homeUiCtrl.listNewArticle.get(0).imageUrl}');"></div>
-							<div style="color: black;">
-								<div style="position: absolute; bottom: 0px; left: 20px;">
-									<p style="font-family: WorkSans; font-weight: 500; font-size: 24px; line-height: 32px;">#{homeUiCtrl.listNewArticle.get(0).title}</p>
-									<p>
-										#{homeUiCtrl.listNewArticle.get(0).source.toUpperCase()} -
-										#{homeUiCtrl.listNewArticle.get(0).creationTime} &nbsp;&nbsp;&nbsp;
-										#{homeUiCtrl.listNewArticle.get(0).totalComment}
-										<i class="fa fa-comment"></i>
-									</p>
-								</div>
+
+						</div>
+						<div style="color: black;">
+							<div>
+								<p style="font-family: WorkSans; font-weight: 500; font-size: 24px; line-height: 32px;">#{homeUiCtrl.listNewArticle.get(0).title}</p>
+								<p>
+									#{homeUiCtrl.listNewArticle.get(0).source.toUpperCase()} -
+									#{homeUiCtrl.listNewArticle.get(0).creationTime} &nbsp;&nbsp;&nbsp;
+									#{homeUiCtrl.listNewArticle.get(0).totalComment}
+									<i class="fa fa-comment"></i>
+								</p>
 							</div>
 						</div>
 					</h:commandLink>
@@ -51,7 +50,7 @@
 						<div style="width: 100%; height: 200px; margin-top: 40px; border-bottom: 1px solid #eee;">
 							<h:commandLink action="#{homeUiCtrl.articleRedirect(m)}">
 								<div
-									style="width: 30%; height: 80%; float: left; background-image: url('#{m.imageUrl}'); background-size: cover;">
+									style="width: 30%; height: 80%; float: left; background-image: url('#{m.imageUrl}'); background-size: cover; box-shadow: 5px 5px 5px grey;">
 								</div>
 							</h:commandLink>
 							<div style="width: 70%; height: 100%; float: left; padding-left: 10px;">
@@ -60,9 +59,12 @@
 										style="color: black; font-family: WorkSans; font-weight: 500; font-size: 18px; line-height: 32px;">#{m.title}</p>
 								</h:commandLink>
 								<p>
-									#{m.source.toUpperCase()} - #{m.creationTime} &nbsp;&nbsp;&nbsp; #{m.totalComment}
+									<strong> #{m.source.toUpperCase()} - #{m.creationTime} &nbsp;&nbsp;&nbsp;
+										#{m.totalComment} </strong>
 									<i class="fa fa-comment"></i>
 								</p>
+								<br></br>
+								<p>#{homeUiCtrl.getDescription(m)}</p>
 							</div>
 						</div>
 					</ui:repeat>
@@ -76,16 +78,16 @@
 					<h:commandLink action="#{homeUiCtrl.articleRedirect(homeUiCtrl.listTopResponse.get(0))}">
 						<div class="first-article-p"
 							style="position: relative; background-size: cover; background-image: url('#{homeUiCtrl.listTopResponse.get(0).imageUrl}');">
-							<div style="color: black;">
-								<div style="position: absolute; bottom: 0px; left: 20px;">
-									<p style="font-family: WorkSans; font-weight: 500; font-size: 24px; line-height: 32px;">#{homeUiCtrl.listTopResponse.get(0).title}</p>
-									<p>
-										#{homeUiCtrl.listTopResponse.get(0).source.toUpperCase()} -
-										#{homeUiCtrl.listTopResponse.get(0).creationTime} &nbsp;&nbsp;&nbsp;
-										#{homeUiCtrl.listTopResponse.get(0).totalComment}
-										<i class="fa fa-comment"></i>
-									</p>
-								</div>
+						</div>
+						<div style="color: black;">
+							<div>
+								<p style="font-family: WorkSans; font-weight: 500; font-size: 24px; line-height: 32px;">#{homeUiCtrl.listTopResponse.get(0).title}</p>
+								<p>
+									#{homeUiCtrl.listTopResponse.get(0).source.toUpperCase()} -
+									#{homeUiCtrl.listTopResponse.get(0).creationTime} &nbsp;&nbsp;&nbsp;
+									#{homeUiCtrl.listTopResponse.get(0).totalComment}
+									<i class="fa fa-comment"></i>
+								</p>
 							</div>
 						</div>
 					</h:commandLink>
@@ -93,7 +95,7 @@
 						value="#{homeUiCtrl.listTopResponse.subList(1, homeUiCtrl.listTopResponse.size())}">
 						<div style="width: 100%; height: 200px; margin-top: 40px; border-bottom: 1px solid #eee;">
 							<div
-								style="width: 30%; height: 80%; float: left; background-image: url('#{m.imageUrl}'); background-size: cover;">
+								style="width: 30%; height: 80%; float: left; background-image: url('#{m.imageUrl}'); background-size: cover; box-shadow: 5px 5px 5px grey;">
 							</div>
 							<div style="width: 70%; height: 100%; float: left; padding-left: 10px;">
 								<h:commandLink action="#{homeUiCtrl.articleRedirect(m)}">
@@ -101,9 +103,12 @@
 										style="color: black; font-family: WorkSans; font-weight: 500; font-size: 18px; line-height: 32px;">#{m.title}</p>
 								</h:commandLink>
 								<p>
-									#{m.source.toUpperCase()} - #{m.creationTime} &nbsp;&nbsp;&nbsp; #{m.totalComment}
+									<strong> #{m.source.toUpperCase()} - #{m.creationTime} &nbsp;&nbsp;&nbsp;
+										#{m.totalComment} </strong>
 									<i class="fa fa-comment"></i>
 								</p>
+								<br></br>
+								<p>#{homeUiCtrl.getDescription(m)}</p>
 							</div>
 						</div>
 					</ui:repeat>

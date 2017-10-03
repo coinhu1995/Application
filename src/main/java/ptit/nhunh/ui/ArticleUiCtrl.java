@@ -12,19 +12,15 @@ import javax.faces.bean.SessionScoped;
 import lombok.Getter;
 import lombok.Setter;
 import ptit.nhunh.context.AppContext;
-import ptit.nhunh.dao.SQLDAO;
-import ptit.nhunh.dao.SQLDAOFactory;
 import ptit.nhunh.model.Article;
 import ptit.nhunh.model.Comment;
+import ptit.nhunh.service.impl.Article_Init_ServiceImpl;
 
 @ManagedBean
 @SessionScoped
 public class ArticleUiCtrl implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
-	private SQLDAO urlDao = SQLDAOFactory.getDAO(SQLDAOFactory.ARTICLE);
-	private SQLDAO cmtDao = SQLDAOFactory.getDAO(SQLDAOFactory.COMMENT);
 
 	@Getter
 	@Setter
@@ -38,6 +34,8 @@ public class ArticleUiCtrl implements Serializable {
 	@Setter
 	private boolean hasData = true;
 
+	private Article_Init_ServiceImpl service = new Article_Init_ServiceImpl();
+
 	public void init() throws SQLException, FileNotFoundException {
 		this.listComment = new ArrayList<>();
 		AppContext appContext = AppContext.getInstance();
@@ -45,14 +43,8 @@ public class ArticleUiCtrl implements Serializable {
 
 		if (appContext.getAttribute("article") != null) {
 			id = (int) appContext.getAttribute("article");
-			this.article = (Article) this.urlDao.findById(id + "");
-
-			List<Object> listObjCmt = this.cmtDao
-					.getData("select * from TblComment where page_id = '" + this.article.getUrl_id() + "'");
-
-			for (int i = 0; i < listObjCmt.size(); i++) {
-				this.listComment.add((Comment) listObjCmt.get(i));
-			}
+			this.article = this.service.getArticle(id + "");
+			this.listComment = this.service.getListComment(this.article.getUrl_id());
 		} else {
 			this.hasData = false;
 		}

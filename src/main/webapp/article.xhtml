@@ -57,6 +57,9 @@
 					<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
 
 					<script type="text/javascript">
+						Highcharts.setOptions({
+						    colors: ['#ED561B', '#058DC7', '#64E572', '#f1ff60']
+						});
 						Highcharts
 								.chart(
 										'container',
@@ -68,7 +71,7 @@
 												type : 'pie'
 											},
 											title : {
-												text : 'Quan điểm của người dân'
+												text : 'Quan điểm của độc giả'
 											},
 											tooltip : {
 												pointFormat : '{series.name}: <b>{point.percentage:.1f}%</b>'

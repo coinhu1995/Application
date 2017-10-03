@@ -3,7 +3,6 @@
 	<name>Application</name>
 	<comment></comment>
 	<projects>
-		<project>Policy</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
