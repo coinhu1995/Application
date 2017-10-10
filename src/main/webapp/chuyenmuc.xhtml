@@ -17,6 +17,50 @@
 </h:head>
 
 <h:body>
-	<h3>#{categoryUiCtrl.item}</h3>
+	<div class="body-p" style="padding-right: 10%;">
+		<h:form>
+			<h:commandLink action="#{categoryUiCtrl.articleRedirect(categoryUiCtrl.listArticle.get(0))}">
+				<div class="first-article-p"
+					style="position: relative; background-size: cover; background-image: url('#{categoryUiCtrl.listArticle.get(0).imageUrl}');">
+				</div>
+				<div style="color: black;">
+					<div>
+						<p style="font-family: WorkSans; font-weight: 500; font-size: 24px; line-height: 32px;">#{categoryUiCtrl.listArticle.get(0).title}</p>
+						<p>
+							#{categoryUiCtrl.listArticle.get(0).source.toUpperCase()} -
+							#{categoryUiCtrl.listArticle.get(0).creationTime} &nbsp;&nbsp;&nbsp;
+							#{categoryUiCtrl.listArticle.get(0).totalComment}
+							<i class="fa fa-comment"></i>
+						</p>
+					</div>
+				</div>
+			</h:commandLink>
+			<ui:repeat var="m" value="#{categoryUiCtrl.paginator.model}">
+				<div style="width: 100%; height: 200px; margin-top: 40px; border-bottom: 1px solid #eee;">
+					<div
+						style="width: 30%; height: 80%; float: left; background-image: url('#{m.imageUrl}'); background-size: cover; box-shadow: 5px 5px 5px grey;">
+					</div>
+					<div style="width: 70%; height: 100%; float: left; padding-left: 10px;">
+						<h:commandLink action="#{categoryUiCtrl.articleRedirect(m)}">
+							<p class="title-hover-p"
+								style="color: black; font-family: WorkSans; font-weight: 500; font-size: 18px; line-height: 32px;">#{m.title}</p>
+						</h:commandLink>
+						<p>
+							<strong> #{m.source.toUpperCase()} - #{m.creationTime} &nbsp;&nbsp;&nbsp;
+								#{m.totalComment} </strong>
+							<i class="fa fa-comment"></i>
+						</p>
+						<br></br>
+						<p>#{categoryUiCtrl.getDescription(m)}</p>
+					</div>
+				</div>
+			</ui:repeat>
+			<h:commandButton value="&lt; prev" action="#{categoryUiCtrl.paginator.prev}" />
+			<h:outputText
+				value="  #{categoryUiCtrl.paginator.pageIndex} / #{categoryUiCtrl.paginator.pages}  " />
+			<h:commandButton value="next &gt;" action="#{categoryUiCtrl.paginator.next}" />
+			<h:inputHidden value="#{categoryUiCtrl.paginator.pageIndex}" />
+		</h:form>
+	</div>
 </h:body>
 </html>

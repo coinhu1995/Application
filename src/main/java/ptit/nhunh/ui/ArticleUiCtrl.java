@@ -21,7 +21,11 @@ import ptit.nhunh.service.impl.Article_Init_ServiceImpl;
 public class ArticleUiCtrl implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	
+	@Getter
+	@Setter
+	private RepeatPaginator paginator;
+	
 	@Getter
 	@Setter
 	private Article article;
@@ -48,6 +52,8 @@ public class ArticleUiCtrl implements Serializable {
 		} else {
 			this.hasData = false;
 		}
+		
+		this.paginator = new RepeatPaginator(this.listComment);
 	}
 
 	public String articleRedirect(Article article) {

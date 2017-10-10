@@ -23,7 +23,7 @@
 	<ui:include src="common/top.xhtml" />
 	<ui:include src="common/header.xhtml" />
 	<h:outputStylesheet rendered="#{articleUiCtrl.article.source eq 'vnexpress.vn' ? true : false}"
-		library="css" name="#{articleUiCtrl.article.url_id}.css" />
+		library="css" name="vnexpress/#{articleUiCtrl.article.url_id}.css" />
 	<h:outputScript library="js" name="exporting.js"></h:outputScript>
 	<h:outputScript library="js" name="highcharts.js"></h:outputScript>
 
@@ -43,15 +43,22 @@
 					<br></br>
 					<div class="ykien_vne width_common">
 						<div class="left">
-							<strong>Ý kiến bạn đọc</strong> (<label id="total_comment">#{articleUiCtrl.listComment.size()}</label>)
+							<strong>Ý kiến bạn đọc</strong> (<label id="total_comment">#{articleUiCtrl.paginator.offset}
+								- #{articleUiCtrl.paginator.limit} / #{articleUiCtrl.listComment.size()}</label>)
 						</div>
 					</div>
 
-					<ui:repeat var="m" value="#{articleUiCtrl.listComment}">
+					<ui:repeat value="#{articleUiCtrl.paginator.model}" var="listItem">
 						<div class="comment_item width_common hight_light comment-p" style="margin-bottom: 20px;">
-							<p class="full_content">#{m.content}</p>
+							<p class="full_content">#{listItem.content}</p>
 						</div>
 					</ui:repeat>
+					<h:commandButton value="&lt; prev" action="#{articleUiCtrl.paginator.prev}" />
+					<h:outputText
+						value="  #{articleUiCtrl.paginator.pageIndex} / #{articleUiCtrl.paginator.pages}  " />
+					<h:commandButton value="next &gt;" action="#{articleUiCtrl.paginator.next}" />
+					<h:inputHidden value="#{articleUiCtrl.paginator.pageIndex}" />
+
 				</div>
 				<div class="info-p">
 					<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>

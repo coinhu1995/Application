@@ -44,8 +44,7 @@
 							</div>
 						</div>
 					</h:commandLink>
-					<ui:repeat var="m"
-						value="#{homeUiCtrl.listNewArticle.subList(1, homeUiCtrl.listNewArticle.size())}">
+					<ui:repeat var="m" value="#{homeUiCtrl.paginator1.model}">
 
 						<div style="width: 100%; height: 200px; margin-top: 40px; border-bottom: 1px solid #eee;">
 							<h:commandLink action="#{homeUiCtrl.articleRedirect(m)}">
@@ -68,6 +67,10 @@
 							</div>
 						</div>
 					</ui:repeat>
+					<h:commandButton value="&lt; prev" action="#{homeUiCtrl.paginator1.prev}" />
+					<h:outputText value="#{homeUiCtrl.paginator1.pageIndex} / #{homeUiCtrl.paginator1.pages}" />
+					<h:commandButton value="next &gt;" action="#{homeUiCtrl.paginator1.next}" />
+					<h:inputHidden value="#{homeUiCtrl.paginator1.pageIndex}" />
 				</h:form>
 				<div style="padding: 5px 5px; background-color: #eceeed; width: 25%; margin-top: 10px;">
 					<h3>
@@ -91,8 +94,7 @@
 							</div>
 						</div>
 					</h:commandLink>
-					<ui:repeat var="m"
-						value="#{homeUiCtrl.listTopResponse.subList(1, homeUiCtrl.listTopResponse.size())}">
+					<ui:repeat var="m" value="#{homeUiCtrl.paginator2.model}">
 						<div style="width: 100%; height: 200px; margin-top: 40px; border-bottom: 1px solid #eee;">
 							<div
 								style="width: 30%; height: 80%; float: left; background-image: url('#{m.imageUrl}'); background-size: cover; box-shadow: 5px 5px 5px grey;">
@@ -112,11 +114,16 @@
 							</div>
 						</div>
 					</ui:repeat>
+					<h:commandButton value="&lt; prev" action="#{homeUiCtrl.paginator2.prev}" />
+					<h:outputText value="#{homeUiCtrl.paginator2.pageIndex} / #{homeUiCtrl.paginator2.pages}" />
+					<h:commandButton value="next &gt;" action="#{homeUiCtrl.paginator2.next}" />
+					<h:inputHidden value="#{homeUiCtrl.paginator2.pageIndex}" />
 				</h:form>
+				<br></br> <br></br> <br></br> <br></br>
+				
 			</div>
-
-			<div class=""></div>
 		</div>
+		<div class=""></div>
 	</div>
 </h:body>
 </html>

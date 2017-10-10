@@ -25,7 +25,15 @@ import ptit.nhunh.service.impl.Home_Init_ServiceImpl;
 public class HomeUiCtrl implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	
+	@Getter
+	@Setter
+	private RepeatPaginator paginator1;
+	
+	@Getter
+	@Setter
+	private RepeatPaginator paginator2;
+	
 	@Getter
 	@Setter
 	private List<Article> listNewArticle;
@@ -41,8 +49,11 @@ public class HomeUiCtrl implements Serializable {
 		AppContext appContext = AppContext.getInstance();
 		appContext.setAttribute("item", "trangchu");
 
-		this.listNewArticle = this.initService.getNewArticle(5);
-		this.listTopResponse = this.initService.getTopResponse(5);
+		this.listNewArticle = this.initService.getNewArticle(100);
+		this.listTopResponse = this.initService.getTopResponse(100);
+		
+		this.paginator1 = new RepeatPaginator(this.listNewArticle.subList(1, this.listNewArticle.size()));
+		this.paginator2 = new RepeatPaginator(this.listTopResponse.subList(1, this.listTopResponse.size()));
 	}
 
 	public String articleRedirect(Article article) {
