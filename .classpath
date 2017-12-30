@@ -54,7 +54,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/Policy"/>
-	<classpathentry kind="lib" path="D:/WORK/WORKSPACE/Capstone/libraries/Policy_0.0.1-SNAPSHOT.jar">
+	<classpathentry kind="lib" path="D:/WORK/WORKSPACE/Capstone/libraries/Policy_0.0.1-SNAPSHOT.jar" sourcepath="/Policy">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>

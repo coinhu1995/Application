@@ -72,10 +72,20 @@
 										'container',
 										{
 											chart : {
+												style: {
+										            fontSize: '20px'
+										        },
 												plotBackgroundColor : null,
 												plotBorderWidth : null,
 												plotShadow : false,
 												type : 'pie'
+											},
+											legend: {
+											    itemStyle: {
+											        color: '#000000',
+											        fontWeight: 'bold',
+											        fontSize: '40px'
+											    }
 											},
 											title : {
 												text : 'Quan điểm của độc giả'
@@ -102,15 +112,8 @@
 												data : [ {
 													name : 'Đồng ý',
 													y : #{articleUiCtrl.article.dongy}
-												}, {
-													name : 'Không đồng ý',
-													y : #{articleUiCtrl.article.khongdongy}
-												}, {
-													name : 'Góp ý',
-													y : #{articleUiCtrl.article.gopy},
-													sliced : true,
-													selected : true
-												}, {
+												}, 
+												{
 													name : 'Ý kiến khác',
 													y : #{articleUiCtrl.article.ykienkhac}
 												} ]
